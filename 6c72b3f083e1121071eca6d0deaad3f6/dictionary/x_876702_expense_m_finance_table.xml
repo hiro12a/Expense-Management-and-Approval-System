@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="58146dc58369921071eca6d0deaad3fa" label="Finance Table" max_length="40" name="x_876702_expense_m_finance_table" type="collection">
+        <element label="Expense ID" max_length="32" name="expense_id" reference="x_876702_expense_m_expense_submission_table" type="reference"/>
+        <element choice="1" label="Reimbursement Status" max_length="40" name="reimbursement_status" type="choice">
+            <choice/>
+        </element>
+        <element label="Finance ID" max_length="40" name="finance_id" type="string"/>
+        <element label="Payment Date" max_length="40" name="payment_date" type="glide_date_time"/>
+        <element label="Finance Comments" max_length="255" name="finance_comments" type="string_full_utf8"/>
+        <index name="index">
+            <element name="expense_id"/>
+        </index>
+    </element>
+</database>

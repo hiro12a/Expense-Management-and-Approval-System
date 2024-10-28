@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="07e2edc18369921071eca6d0deaad371" label="Approval Table" max_length="40" name="x_876702_expense_m_approval_table" type="collection">
+        <element choice="1" label="Status" max_length="40" name="status" type="choice">
+            <choice/>
+        </element>
+        <element label="Approval Date" max_length="40" name="approval_date" type="glide_date_time"/>
+        <element label="Comments" max_length="40" name="comments" type="string"/>
+        <element label="Expense ID" max_length="32" name="expense_id" reference="x_876702_expense_m_expense_submission_table" type="reference"/>
+        <element label="Approver ID" max_length="32" name="approver_id" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="approver_id"/>
+        </index>
+        <index name="index2">
+            <element name="expense_id"/>
+        </index>
+    </element>
+</database>

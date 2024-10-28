@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-28 00:05:37</sys_created_on>
+        <sys_id>c664e1498369921071eca6d0deaad304</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_876702_expense_m_finance_table.x_876702_expense_m.finance_table_user</sys_name>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_security_acl display_value="x_876702_expense_m_finance_table">8a64e1498369921071eca6d0deaad300</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_c664e1498369921071eca6d0deaad304</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-28 00:05:37</sys_updated_on>
+        <sys_user_role display_value="x_876702_expense_m.finance_table_user" name="x_876702_expense_m.finance_table_user">f564e9098369921071eca6d0deaad3e2</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

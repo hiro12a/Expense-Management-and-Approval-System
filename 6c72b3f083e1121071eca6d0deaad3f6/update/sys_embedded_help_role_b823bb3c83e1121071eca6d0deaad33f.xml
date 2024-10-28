@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_876702_expense_m.expense_approval" name="x_876702_expense_m.expense_approval">7c23bb3c83e1121071eca6d0deaad33d</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-27 15:50:44</sys_created_on>
+        <sys_id>b823bb3c83e1121071eca6d0deaad33f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>7c23bb3c83e1121071eca6d0deaad33d</sys_name>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name>sys_embedded_help_role_b823bb3c83e1121071eca6d0deaad33f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-27 15:50:44</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>
