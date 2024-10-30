@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Status will automatically be updated to "Pending Approval" after the user submits a new expense record</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Auto update status</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+   // Checks to make sure it is a new record
+   if(g_form.isNewRecord())
+   {
+		var currentStatus = g_form.getValue('status');
+
+		if(currentStatus == '' || currentStatus == null)
+		{
+			g_form.setValue('status', 'pending_approval');
+		}
+   }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-30 03:22:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>14e3e4f583ad525071eca6d0deaad33b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Auto update status</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name>sys_script_client_14e3e4f583ad525071eca6d0deaad33b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-30 03:22:03</sys_updated_on>
+        <table>x_876702_expense_m_expense_submission_table</table>
+        <type>onSubmit</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
