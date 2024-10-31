@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
     <sys_app_module action="INSERT_OR_UPDATE">
         <active>true</active>
-        <application display_value="Approval Table">35032d858369921071eca6d0deaad329</application>
+        <application display_value="Expense Management and Approval System">a1f77ff48365121071eca6d0deaad3d4</application>
         <assessment/>
         <device_type/>
         <filter/>
         <hint/>
         <homepage/>
         <image/>
-        <link_type>LIST</link_type>
+        <link_type>SEPARATOR</link_type>
         <map_page/>
         <mobile_title>Approval Tables</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
         <name>x_876702_expense_m_approval_table</name>
-        <order/>
+        <order>10</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>
@@ -25,17 +25,17 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b1032d858369921071eca6d0deaad32e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Approval Tables</sys_name>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Approvals</sys_name>
         <sys_overrides/>
         <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
         <sys_policy/>
         <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
         <sys_update_name>sys_app_module_b1032d858369921071eca6d0deaad32e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-27 23:59:35</sys_updated_on>
+        <sys_updated_on>2024-10-31 15:50:31</sys_updated_on>
         <timeline_page/>
-        <title>Approval Tables</title>
+        <title>Approvals</title>
         <uncancelable>false</uncancelable>
         <view_name/>
         <window_name/>
