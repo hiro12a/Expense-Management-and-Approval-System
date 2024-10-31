@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_876702_expense_m_expense_submission_table</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Auto Create Approval Record</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	// Create a record in the approval table
+	var approvalGR = new GlideRecord('x_876702_expense_m_approval_table');
+	approvalGR.initialize();
+
+	// Set the expense_id and status for the approval record
+	approvalGR.expense_id = current.sys_id;
+	approvalGR.status = 'pending_approval';
+
+	// Array to hold approvers
+	var approvers = [];
+
+	// Get the users within the approver group
+	var approverGroup = new GlideRecord('sys_user_grmember');
+	approverGroup.addQuery('group.name', 'Expense Approvers');
+	approverGroup.query();
+
+	// Add each approvers sys_id to the array
+	while(approverGroup.next())
+	{
+		approvers.push(approverGroup.user.sys_id.toString()); // Push the sys_id as a string
+	}
+
+	// Check if there are any available approvers
+	if(approvers.length > 0)
+	{
+		// Select a random approver
+		var randomApprover = Math.floor(Math.random() * approvers.length);
+		var selectedApproverID = approvers[randomApprover];
+
+		// Set the selected approvers ID to the approval record
+		approvalGR.approver_id = selectedApproverID;
+
+		// Insert the approver record
+		approvalGR.insert();
+
+		gs.info('Approval record inserted successfully for approver: ' + approvalGR.approver_name);
+	}
+	else
+	{
+		gs.addErrorMessage('No approvers found in the approver group');
+	}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-31 16:22:02</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2cca181e83a112103f8ab6a6feaad383</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Auto Create Approval Record</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name>sys_script_2cca181e83a112103f8ab6a6feaad383</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-31 16:39:50</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=2cca181e83a112103f8ab6a6feaad383"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>2cca181e83a112103f8ab6a6feaad383</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-31 16:22:02</sys_created_on>
+        <sys_id>d2a0209283e112103f8ab6a6feaad369</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-31 16:22:02</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

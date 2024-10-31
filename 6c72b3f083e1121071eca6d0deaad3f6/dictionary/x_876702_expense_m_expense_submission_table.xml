@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="6fd7bbf48365121071eca6d0deaad3f7" label="Expense Submission Table" max_length="40" name="x_876702_expense_m_expense_submission_table" type="collection">
-        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
-        <element attributes="edge_encryption_enabled=true" label="Date" mandatory="true" max_length="40" name="date" type="glide_date_time"/>
-        <element attributes="edge_encryption_enabled=true" label="Description" max_length="4000" name="description" type="string"/>
-        <element attributes="encode_utf8=false" label="Employee Name" max_length="32" name="employee_name" reference="sys_user" type="reference"/>
+        <element label="Work Notes" max_length="255" name="work_notes" type="journal_input"/>
+        <element attributes="edge_encryption_enabled=true" label="Attachments" max_length="1024" name="attachments" type="url"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Status" max_length="40" name="status" read_only="true" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Submitted" sequence="4" value="submitted"/>
-                <element inactive_on_update="false" label="Denied" sequence="1" value="denied"/>
-                <element inactive_on_update="false" label="Reimbursed" sequence="3" value="reimbursed"/>
-                <element inactive_on_update="false" label="Pending Approval" sequence="2" value="pending_approval"/>
-                <element inactive_on_update="false" label="Approved" sequence="0" value="approved"/>
+                <element inactive_on_update="false" label="Submitted" value="submitted"/>
+                <element inactive_on_update="false" label="Pending Approval" value="pending_approval"/>
+                <element inactive_on_update="false" label="Approved" value="approved"/>
+                <element inactive_on_update="false" label="Reimbursed" value="reimbursed"/>
+                <element inactive_on_update="false" label="Denied" value="denied"/>
             </choice>
         </element>
+        <element label="Additional Comments" max_length="255" name="additional_comments" type="journal_input"/>
         <element label="Employee Name" max_length="40" name="employee" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Date" mandatory="true" max_length="40" name="date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Description" max_length="4000" name="description" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Category" mandatory="true" max_length="40" name="category" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Office Supplies" sequence="1" value="office_supplies"/>
-                <element inactive_on_update="false" label="Meals" sequence="0" value="meals"/>
-                <element inactive_on_update="false" label="Travel" sequence="2" value="travel"/>
+                <element inactive_on_update="false" label="Office Supplies" value="office_supplies"/>
+                <element inactive_on_update="false" label="Meals" value="meals"/>
+                <element inactive_on_update="false" label="Travel" value="travel"/>
             </choice>
         </element>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Expense ID" max_length="40" name="number" read_only="true" type="string"/>
+        <element attributes="encode_utf8=false" label="Employee Name" max_length="32" name="employee_name" reference="sys_user" type="reference"/>
         <element label="Amount" mandatory="true" max_length="15" name="amount" type="currency"/>
-        <element attributes="edge_encryption_enabled=true" label="Attachments" max_length="1024" name="attachments" type="url"/>
         <index name="index">
             <element name="employee_name"/>
         </index>
