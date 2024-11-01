@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="6fd7bbf48365121071eca6d0deaad3f7" label="Expense Submission Table" max_length="40" name="x_876702_expense_m_expense_submission_table" type="collection">
+    <element audit="true" db_object_id="6fd7bbf48365121071eca6d0deaad3f7" label="Expense Submission Table" max_length="40" name="x_876702_expense_m_expense_submission_table" type="collection">
         <element label="Work Notes" max_length="255" name="work_notes" type="journal_input"/>
         <element attributes="edge_encryption_enabled=true" label="Attachments" max_length="1024" name="attachments" type="url"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Status" max_length="40" name="status" read_only="true" type="choice">

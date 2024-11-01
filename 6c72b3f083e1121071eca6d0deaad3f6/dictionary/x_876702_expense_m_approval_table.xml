@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="07e2edc18369921071eca6d0deaad371" label="Approval Table" max_length="40" name="x_876702_expense_m_approval_table" type="collection">
+    <element audit="true" db_object_id="07e2edc18369921071eca6d0deaad371" label="Approval Table" max_length="40" name="x_876702_expense_m_approval_table" type="collection">
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Approval ID" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Additional Information" max_length="255" name="additional_information" type="journal_input"/>
         <element label="Comments" max_length="4000" name="comments" type="string"/>
         <element label="Approval ID" max_length="40" name="approval_id" reference="x_876702_expense_m_javascript_global_getnextobjnumberpadded___" type="string"/>
         <element label="Approval Name" max_length="40" name="approval_name" read_only="true" type="string"/>
+        <element label="Work Notes" max_length="255" name="work_notes" type="journal_input"/>
         <element label="Expense ID" max_length="32" name="expense_id" read_only="true" reference="x_876702_expense_m_expense_submission_table" type="reference"/>
         <element choice="1" label="Status" max_length="40" name="status" type="choice">
             <choice>

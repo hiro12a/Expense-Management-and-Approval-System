@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=675000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>sync_work_notes_between_expense_and_approval</internal_name>
+        <label_cache>[{"name":"e4e1da7e-e002-4160-8203-23046ff966ce.Record.approval_id","label":"1 - Look Up Record➛Approval Table Record➛Approval ID (approval_id)","reference":"x_876702_expense_m_javascript_global_getnextobjnumberpadded___","reference_display":"javascript:global.getNextObjNumberPadded();","type":"string","base_type":"string","parent_table_name":"x_876702_expense_m_approval_table","column_name":"approval_id","usedInstances":{"297950a3-c0c3-4378-8f92-f80fcd4dabb1":["condition"]}},{"name":"e4e1da7e-e002-4160-8203-23046ff966ce.Table","label":"1 - Look Up Record➛Approval Table Table","reference":"x_876702_expense_m_approval_table","reference_display":"Approval Table","type":"table_name","base_type":"table_name","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","filter_table_source":"v_cluster_transaction"}},{"name":"e4e1da7e-e002-4160-8203-23046ff966ce.Record","label":"1 - Look Up Record➛Approval Table Record","reference":"x_876702_expense_m_approval_table","reference_display":"Approval Table","type":"reference","base_type":"reference","usedInstances":{"e7c0da9d-6e0f-4d5b-bcc0-633af5e0a5a8":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"e4e1da7e-e002-4160-8203-23046ff966ce.Record.expense_id.number","label":"1 - Look Up Record➛Approval Table Record➛Expense ID➛Expense ID","reference":"","reference_display":"Expense ID","type":"string","base_type":"string","parent_table_name":"x_876702_expense_m_expense_submission_table","column_name":"number","usedInstances":{}},{"name":"Updated_1.current.work_notes","label":"Trigger - Record Updated➛Expense Submission Table Record➛Work Notes","reference":"","reference_display":"Work Notes","type":"journal_input","base_type":"journal_input","parent_table_name":"x_876702_expense_m_expense_submission_table","column_name":"work_notes","usedInstances":{"1b9b7bc2-c25c-471f-b651-5b734543fe15":["work_notes"],"e7c0da9d-6e0f-4d5b-bcc0-633af5e0a5a8":["work_notes"]}},{"name":"Updated_1.current.number","label":"Trigger - Record Updated➛Expense Submission Table Record➛Expense ID","reference":"","reference_display":"Expense ID","type":"string","base_type":"string","parent_table_name":"x_876702_expense_m_expense_submission_table","column_name":"number","usedInstances":{"1b9b7bc2-c25c-471f-b651-5b734543fe15":["expense_id"],"e4e1da7e-e002-4160-8203-23046ff966ce":["conditions"]}}]</label_cache>
+        <master_snapshot>0df9bed283ed12103f8ab6a6feaad3c9</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Sync Work Notes Between Expense and Approval</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>95f9fed283ed12103f8ab6a6feaad320</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:28:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e529fa9283ed12103f8ab6a6feaad3e4</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Sync Work Notes Between Expense and Approval</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name>sys_hub_flow_e529fa9283ed12103f8ab6a6feaad3e4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:42:00</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=e529fa9283ed12103f8ab6a6feaad3e4"/>
+    <sys_variable_value action="delete_multiple" query="document_key=e529fa9283ed12103f8ab6a6feaad3e4"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_876702_expense_m_expense_submission_table">work_notesVALCHANGES<item endquery="false" field="work_notes" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>false</on_insert>
+        <on_update>true</on_update>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>95f9fed283ed12103f8ab6a6feaad320</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:31:48</sys_updated_on>
+        <table>x_876702_expense_m_expense_submission_table</table>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>e529fa9283ed12103f8ab6a6feaad3e4</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:39:33</sys_created_on>
+        <sys_id>babb369683ed12103f8ab6a6feaad3b5</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:42:00</sys_updated_on>
+        <trigger display_value="">95f9fed283ed12103f8ab6a6feaad320</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=e529fa9283ed12103f8ab6a6feaad3e4^sys_idNOT INbabb369683ed12103f8ab6a6feaad3b5"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=e529fa9283ed12103f8ab6a6feaad3e4"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=e529fa9283ed12103f8ab6a6feaad3e4^sys_idNOT INa1297e9283ed12103f8ab6a6feaad3b3"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>e529fa9283ed12103f8ab6a6feaad3e4</id>
+        <name>Sync Work Notes Between Expense and Approval</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:28:16</sys_created_on>
+        <sys_id>a1297e9283ed12103f8ab6a6feaad3b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:28:16</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=a1297e9283ed12103f8ab6a6feaad3b3"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=e529fa9283ed12103f8ab6a6feaad3e4^sys_idNOT INabe9329283ed12103f8ab6a6feaad324,afe97ed283ed12103f8ab6a6feaad3f1,e7e97ed283ed12103f8ab6a6feaad3f5"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Sync Work Notes Between Expense and Approval">e529fa9283ed12103f8ab6a6feaad3e4</model>
+        <model_id>e529fa9283ed12103f8ab6a6feaad3e4</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_e529fa9283ed12103f8ab6a6feaad3e4</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:41</sys_created_on>
+        <sys_id>abe9329283ed12103f8ab6a6feaad324</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:31:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=abe9329283ed12103f8ab6a6feaad324"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDCollection</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>global</scope_name>
+        <serialized_content>{"FlowDesigner:FDCollection":{"$COCollectionField":[{"FDChangeDetails":{"previous_display_value":"String","previous_display_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Previous Display Value\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\"}"},"previous_value":"String","previous_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Previous Value\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\"}"},"current_display_value":"String","current_display_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Current Display Value\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"current_value":"String","current_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Current Value\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\"}"},"field_name":"String","field_name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Field Name\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\"}"}}}],"$COCollectionField.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"Changed Fields\",\"mandatory\":\"false\",\"child_name\":\"FDChangeDetails\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"100\",\"max_length\":\"4000\"}"},"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FDCollection.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"Changed Fields\",\"mandatory\":\"false\",\"child_name\":\"FDChangeDetails\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"100\",\"max_length\":\"4000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-06-13 23:19:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>f4f014150f023300ecf0cc52ff767eed</sys_id>
+        <sys_mod_count>101</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Flow Designer Designer Model" source="com.glide.hub.designer_backend.model">178d9a8f65d012104f340572a9474038</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Global">global</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-09-28 05:06:11</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Sync Work Notes Between Expense and Approval">e529fa9283ed12103f8ab6a6feaad3e4</model>
+        <model_id>e529fa9283ed12103f8ab6a6feaad3e4</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_e529fa9283ed12103f8ab6a6feaad3e4</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:41</sys_created_on>
+        <sys_id>afe97ed283ed12103f8ab6a6feaad3f1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:31:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=afe97ed283ed12103f8ab6a6feaad3f1"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Sync Work Notes Between Expense and Approval">e529fa9283ed12103f8ab6a6feaad3e4</model>
+        <model_id>e529fa9283ed12103f8ab6a6feaad3e4</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_e529fa9283ed12103f8ab6a6feaad3e4</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:41</sys_created_on>
+        <sys_id>e7e97ed283ed12103f8ab6a6feaad3f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:31:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=e7e97ed283ed12103f8ab6a6feaad3f5"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=e529fa9283ed12103f8ab6a6feaad3e4"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e529fa9283ed12103f8ab6a6feaad3e4"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=e529fa9283ed12103f8ab6a6feaad3e4^sys_idNOT IN99bbf29683ed12103f8ab6a6feaad309"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Sync Work Notes Between Expense and Approval">e529fa9283ed12103f8ab6a6feaad3e4</flow>
+        <name>Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:39:28</sys_created_on>
+        <sys_id>99bbf29683ed12103f8ab6a6feaad309</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:39:28</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=e529fa9283ed12103f8ab6a6feaad3e4^sys_idNOT IN2dbbf29683ed12103f8ab6a6feaad30d,55bbf29683ed12103f8ab6a6feaad30b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Sync Work Notes Between Expense and Approval">e529fa9283ed12103f8ab6a6feaad3e4</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>297950a3-c0c3-4378-8f92-f80fcd4dabb1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:39:28</sys_created_on>
+        <sys_id>2dbbf29683ed12103f8ab6a6feaad30d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:40:06</sys_updated_on>
+        <ui_id>e7c0da9d-6e0f-4d5b-bcc0-633af5e0a5a8</ui_id>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K5Wf2yhfhNK3iarSJAYSMF4Yslz7Bqw5TuY40C7qf99N4qRVQaxMvFTrm+/1uT7nxKe+r4kUZEZiEH5wFiQ8CqIo9P1wGgfLJFoGoYgYQEDGRLMMcKcBnhuB62emqqZQ1xBDINgpTACBkzhI/Mk09KNJGPlxkqZnScLBu25xmw0ihSwLxdZ3bgBW+JNUwoAms/uHMSmYwbMsGDKr91qHklVsCQq3Xvds99nbddGsRc6rDLSlsi9eOOTcdUZf59hBUEMn8McEVha0ACSSMlXCmGRMC2ZzsyYzayosGGDiSqv1sONJatsJzdiqlL/x5Nhv9qWAyrgzYVjesqWCeWdS10rnzLIbnM5tZQbPcsmh7HwRkLJK2fPdWrfhqrAy1x3ENoMdOldVpi87V8gwYOebVCVQAUWjtWHfSUtvnvKX657oQurWFidT5ZypYcWsNXJZ2YZOTUBB63PGikLqR1qY/Fm2YKSSeY8KF16q8hc8s5SP2mO84e2hs8xbYH3elu+YkY2IbzgGwZsxKdfluWJluZWCPtJfVcOkE+Yk0NaF1gLa3oYGzI0s7Bc86hkc8c3YRWJ58t4t42fbS7UzcxuLFZ2eJqd+SGGFBNDLjCJnVM0U7b7DqyAcAvlYUg7Q0Cfl1h3wliYXlle1i13s6LJruKicfFpUpscWFSfl6LPyt4T44bv/wzu3qQ1FuZOOl9z8pDpHwT8q349EXX8vkD4IGni8MuiY9bZ73no1/mHCx7JzgLo+OwsJSpRvyO2DAxlSt0A7+Xvhcc3RnWsOb82nJQhf5PZ3ZDn6b56chz9po3zDhwkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment>Lookup existing approval record</comment>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Sync Work Notes Between Expense and Approval">e529fa9283ed12103f8ab6a6feaad3e4</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:39:28</sys_created_on>
+        <sys_id>55bbf29683ed12103f8ab6a6feaad30b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:40:06</sys_updated_on>
+        <ui_id>e4e1da7e-e002-4160-8203-23046ff966ce</ui_id>
+        <values>H4sIAAAAAAAA/+VY227bOBD9FUHPjlfyTXbeFjEMFOg2QJP2pVsQlEjFxNKkSlK5Gf73HYqibdiKbaE2kKCPJIecMzPnjEj9WIaMhNchmUSTfDIZjpMo6vejaDTqZzhO0/4oS6MUD8JOKPCCgqXBKacwfMS8tONnNE5GSdRD9LmgQlO0QLgolIR15G0J0wXHL99bbMnmjBNFRXj942cnLLAC74aq8Hq5s3QqfI5TysH0vnawE455KdZDVK25uc/b24IvbkEqYqFEnZA+GyoIBQw55pp2wgUWBBupXtYzimJyK/hmYs6EgRNDa/ys2Sv4HUfWLqcQVUbd2npYeZ66DLqlfIoNvjOqzEypavNsLllGtcsJoTkuubnZnnMGt4VhUrgtLnS3W/JyIb64lITrA3zBYKaEMhFa2GAt+jqU/G4un756pDMmqrzUi1xmmK9H2BjF0tJYPMuQcrqAg9ACCs/EA7LVZ9VmwLLoPnAYdHMun8CpZg+iizMLvAu5xd0ZzE+r6e9YMRvFP3AMbAZAjANLHIuQlqWq0vmIMl7qakFhod1Z4aoT6hd9w7HWm8gh7ehXaXG7PNQRI5c0uyVTrDB/wxGPtA5u1fEqGh6k4WRDu0wKwiwKvSUlLwdG/i3hALJcfisgYEpQ3M1KBTk2XVEuUqpWq31VtdzdUmDHI/MCu9kOrSncWmp7c5+bDqilFp9NaoMo+mhiA+fvT2vt1eNScERCMTlINLLhlJbKIJfLLQ3t66I110+A4Ll+a9kZpC9voaqpnjPKSdNXZWYXdr4qvT/3q/IuiQ6ACHIVZIIzUV0TAOilFDA8SL803uFaRbEN/6s5rLN9HeDAyOC1tRpOgOPVcAe+g3uHpwGi7/sVZXZ7vp+sRdA/mwj6vfOJYLkOdZ3Mhrz726GtqLd/tfZ41x5ouLUhXjWJrJXPuK3P3mpfxP1WKt4mnFuZvsG7M18h31Bl55JtYA5ba3/IaRg9MfJAzca7tyLSPGH+X9N6LUzkC1WFd4HraHzwVZRuXUdZjhZQOVbArVnRDMihEVYU5bIUBNX35Q2RbCVzprSpjfebzVcK+hGBBHEGZk6DyjpYW7f8IB+Pw6fyUx74QGpvOoBAgiqQYB1Iu7DbNK7BGS+ql2hcM8x4VRF4DhXbbw+lpHqjeR0p5gFWnNjZTgQVnxXU77e+Jhk0tsAjWD/E2/r87SmjOB308Cjpx3EUxRFJonGSxONRmo9wMsg3OkVIiww6KpycA1XgeOSp4esc7fcg11bbNpsTUHkKTqWwT+1eYgILC+obeFjHgddNJZWSUyx2uso9fCv+mtX4a74O32Vn+RB/m0p2v5ttN9WY70vdH0r2TbBfJf1kaTamUW8ck+xqnMTJ1SAno6sJwcMrPEmHSZ/QbJCf80rw839FuXCg6RUAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=e529fa9283ed12103f8ab6a6feaad3e4"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=e529fa9283ed12103f8ab6a6feaad3e4^sys_idNOT IN5dbbf29683ed12103f8ab6a6feaad30c,e9bbf29683ed12103f8ab6a6feaad30e"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">11bbf29683ed12103f8ab6a6feaad30c</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Sync Work Notes Between Expense and Approval">e529fa9283ed12103f8ab6a6feaad3e4</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:39:28</sys_created_on>
+        <sys_id>5dbbf29683ed12103f8ab6a6feaad30c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:39:31</sys_updated_on>
+        <ui_id>297950a3-c0c3-4378-8f92-f80fcd4dabb1</ui_id>
+        <values>H4sIAAAAAAAA/+VUXWvbMBT9K8PPjvFH4jV5K9sKhbUZTSiMUcy1dJ2IyZYnyUmzkP++K38kYU3ZGH3bm3Wke885V0fee6qxdWPNUl0bI1aVN/v25Huichh9770KSvRmHlMVF1aoKmsB39uAbNwGfXJhagm7xxPC1kJyjX23GjTVWNTebP/blt3VmEnIUVLhwmpRrahccFoVIRTRlEUsidMkDsP4ahzlaZJHMU8AIaFzQ+GHQdy7zy3iv6ra8RFuBialuZMVhb6HzxYrjkRdgDToeyVUHKzSuyOiEfi8kidgLSrbOS7h2Yif1DueTNzBAskjO45DCYbz2inpEAu5HDaVbMrqvhPspokFNNKeTbMxmHGsnTpH13MXi7XaPgxEN6JqnfSbUjGQxxVY8ps3Fo27AZRYUqOshLqmKWS1VhvRFpOWMlhJWgSFVFsidZEIgDnhAQ0DghvCP7bwI2jhXNxRGyruZOZgBMva+FA7q8nCoR1H9qNxgjqDvZWsmwYdMEyL2l4TzwZ71Qf/ZfbOYrff4xgjDu9xhJSN0ThKw9FVHCajOAnHaVFM05Rh8ICMrjggiWQSZCb44XC7uJ8vP919WX59md23avsWD2AKk2IShZPLD2CcXnoAF6L/eurjP6TeXd9fhj4Mw/809cJkXXp7by35P4f+ySW8YzBdQDgyYUjI0mG3w3/ZbezopgU7h7ZKf3cWTtjhF/BS9FThBQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e1bbf29683ed12103f8ab6a6feaad30e</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Sync Work Notes Between Expense and Approval">e529fa9283ed12103f8ab6a6feaad3e4</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>297950a3-c0c3-4378-8f92-f80fcd4dabb1</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:39:28</sys_created_on>
+        <sys_id>e9bbf29683ed12103f8ab6a6feaad30e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:39:31</sys_updated_on>
+        <ui_id>27790436-7b4e-481d-b2a4-d0eb6aff0263</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=e529fa9283ed12103f8ab6a6feaad3e4"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=e529fa9283ed12103f8ab6a6feaad3e4"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_e529fa9283ed12103f8ab6a6feaad3e4^sys_idNOT INafe97ed283ed12103f8ab6a6feaad3f0,e7e97ed283ed12103f8ab6a6feaad3f4,ebe97ed283ed12103f8ab6a6feaad3f7"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_e529fa9283ed12103f8ab6a6feaad3e4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:41</sys_created_on>
+        <sys_id>afe97ed283ed12103f8ab6a6feaad3f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:31:41</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_e529fa9283ed12103f8ab6a6feaad3e4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:41</sys_created_on>
+        <sys_id>e7e97ed283ed12103f8ab6a6feaad3f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:31:41</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_e529fa9283ed12103f8ab6a6feaad3e4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:41</sys_created_on>
+        <sys_id>ebe97ed283ed12103f8ab6a6feaad3f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:31:41</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_e529fa9283ed12103f8ab6a6feaad3e4"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_e529fa9283ed12103f8ab6a6feaad3e4"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_e529fa9283ed12103f8ab6a6feaad3e4"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>sync_work_notes_between_expense_and_approval</internal_name>
+        <label_cache>[{"name":"e4e1da7e-e002-4160-8203-23046ff966ce.Record.approval_id","label":"1 - Look Up Record➛Approval Table Record➛Approval ID (approval_id)","reference":"x_876702_expense_m_javascript_global_getnextobjnumberpadded___","reference_display":"javascript:global.getNextObjNumberPadded();","type":"string","base_type":"string","parent_table_name":"x_876702_expense_m_approval_table","column_name":"approval_id","usedInstances":{"297950a3-c0c3-4378-8f92-f80fcd4dabb1":["condition"]}},{"name":"e4e1da7e-e002-4160-8203-23046ff966ce.Table","label":"1 - Look Up Record➛Approval Table Table","reference":"x_876702_expense_m_approval_table","reference_display":"Approval Table","type":"table_name","base_type":"table_name","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","filter_table_source":"v_cluster_transaction"}},{"name":"e4e1da7e-e002-4160-8203-23046ff966ce.Record","label":"1 - Look Up Record➛Approval Table Record","reference":"x_876702_expense_m_approval_table","reference_display":"Approval Table","type":"reference","base_type":"reference","usedInstances":{"e7c0da9d-6e0f-4d5b-bcc0-633af5e0a5a8":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"e4e1da7e-e002-4160-8203-23046ff966ce.Record.expense_id.number","label":"1 - Look Up Record➛Approval Table Record➛Expense ID➛Expense ID","reference":"","reference_display":"Expense ID","type":"string","base_type":"string","parent_table_name":"x_876702_expense_m_expense_submission_table","column_name":"number","usedInstances":{}},{"name":"Updated_1.current.work_notes","label":"Trigger - Record Updated➛Expense Submission Table Record➛Work Notes","reference":"","reference_display":"Work Notes","type":"journal_input","base_type":"journal_input","parent_table_name":"x_876702_expense_m_expense_submission_table","column_name":"work_notes","usedInstances":{"1b9b7bc2-c25c-471f-b651-5b734543fe15":["work_notes"],"e7c0da9d-6e0f-4d5b-bcc0-633af5e0a5a8":["work_notes"]}},{"name":"Updated_1.current.number","label":"Trigger - Record Updated➛Expense Submission Table Record➛Expense ID","reference":"","reference_display":"Expense ID","type":"string","base_type":"string","parent_table_name":"x_876702_expense_m_expense_submission_table","column_name":"number","usedInstances":{"1b9b7bc2-c25c-471f-b651-5b734543fe15":["expense_id"],"e4e1da7e-e002-4160-8203-23046ff966ce":["conditions"]}}]</label_cache>
+        <master>true</master>
+        <name>Sync Work Notes Between Expense and Approval</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Sync Work Notes Between Expense and Approval">e529fa9283ed12103f8ab6a6feaad3e4</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:47</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0df9bed283ed12103f8ab6a6feaad3c9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:39:33</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=0df9bed283ed12103f8ab6a6feaad3c9"/>
+    <sys_variable_value action="delete_multiple" query="document_key=0df9bed283ed12103f8ab6a6feaad3c9"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=0df9bed283ed12103f8ab6a6feaad3c9"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=0df9bed283ed12103f8ab6a6feaad3c9^sys_idNOT INcdf9bed283ed12103f8ab6a6feaad3ca"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>0df9bed283ed12103f8ab6a6feaad3c9</id>
+        <name>Sync Work Notes Between Expense and Approval</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:47</sys_created_on>
+        <sys_id>cdf9bed283ed12103f8ab6a6feaad3ca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:31:47</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=cdf9bed283ed12103f8ab6a6feaad3ca"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=0df9bed283ed12103f8ab6a6feaad3c9^sys_idNOT IN09f9fed283ed12103f8ab6a6feaad30f,41f9bed283ed12103f8ab6a6feaad3cc,c5f9bed283ed12103f8ab6a6feaad3ef"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Sync Work Notes Between Expense and Approval">0df9bed283ed12103f8ab6a6feaad3c9</model>
+        <model_id>0df9bed283ed12103f8ab6a6feaad3c9</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_0df9bed283ed12103f8ab6a6feaad3c9</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:48</sys_created_on>
+        <sys_id>09f9fed283ed12103f8ab6a6feaad30f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:39:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=09f9fed283ed12103f8ab6a6feaad30f"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Sync Work Notes Between Expense and Approval">0df9bed283ed12103f8ab6a6feaad3c9</model>
+        <model_id>0df9bed283ed12103f8ab6a6feaad3c9</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_0df9bed283ed12103f8ab6a6feaad3c9</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:47</sys_created_on>
+        <sys_id>41f9bed283ed12103f8ab6a6feaad3cc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:39:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=41f9bed283ed12103f8ab6a6feaad3cc"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDCollection</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>global</scope_name>
+        <serialized_content>{"FlowDesigner:FDCollection":{"$COCollectionField":[{"FDChangeDetails":{"previous_display_value":"String","previous_display_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Previous Display Value\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\"}"},"previous_value":"String","previous_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Previous Value\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\"}"},"current_display_value":"String","current_display_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Current Display Value\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"current_value":"String","current_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Current Value\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\"}"},"field_name":"String","field_name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Field Name\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\"}"}}}],"$COCollectionField.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"Changed Fields\",\"mandatory\":\"false\",\"child_name\":\"FDChangeDetails\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"100\",\"max_length\":\"4000\"}"},"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FDCollection.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"Changed Fields\",\"mandatory\":\"false\",\"child_name\":\"FDChangeDetails\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"100\",\"max_length\":\"4000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-06-13 23:19:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>f4f014150f023300ecf0cc52ff767eed</sys_id>
+        <sys_mod_count>101</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Flow Designer Designer Model" source="com.glide.hub.designer_backend.model">178d9a8f65d012104f340572a9474038</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Global">global</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-09-28 05:06:11</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Sync Work Notes Between Expense and Approval">0df9bed283ed12103f8ab6a6feaad3c9</model>
+        <model_id>0df9bed283ed12103f8ab6a6feaad3c9</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_0df9bed283ed12103f8ab6a6feaad3c9</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:48</sys_created_on>
+        <sys_id>c5f9bed283ed12103f8ab6a6feaad3ef</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:39:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c5f9bed283ed12103f8ab6a6feaad3ef"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=0df9bed283ed12103f8ab6a6feaad3c9"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0df9bed283ed12103f8ab6a6feaad3c9"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=0df9bed283ed12103f8ab6a6feaad3c9^sys_idNOT IN89f9fed283ed12103f8ab6a6feaad319"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Sync Work Notes Between Expense and Approval">0df9bed283ed12103f8ab6a6feaad3c9</flow>
+        <name>Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:48</sys_created_on>
+        <sys_id>89f9fed283ed12103f8ab6a6feaad319</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:31:48</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/+1a227jNhD9FUFPLeAWuthWnD6lTtINkE0K290+BIFASZQtrEx5RUqOu8i/dyhRV0uOL7utlXZfNuF1zsyZMySVp6+yjyzsy5fyDFk+lnuyRxgOCfJnmxWGZsabTYKWvG+JiINYEG7kSxZGuCcHoYND+VLtyTHyIzzd0DsHJsHQZIaYLotu+P3FvDCGhqKZ+GWFCcXmMv+JRtbSo9QLiJnNcjy68tHmk5h8k46UpvlIKbN6hULYkHFjvsr2wvOdEBP58ukZAHGLbFfF6uhCsXUN/imKdtFXraFuqZqjI4wUWKLuiBoC1uCPAj5+YZg4GLZykU9xg6tCjJxH4m/yEQvwdOqrJXqh3l+w+oXCx7kYbLdx2mcvAs/GjysGaNOW1KC0M/CjJXlIDeX+wi6KfJb5C1oicKyDV9w2vpvY2p0ugvUk2+jWIwkM0ekHNvLz3xBjoWdFDFPuWdfzwcdpfEwaRGFi5uRm/Di5Nv+8mo0/3EzMyc10Nrkbz26u5dcEj/kl4iumFgpbzBTOax7kWw/7PFIkWlpgTU+mduit2JXNvBgLc157BV/DiJjrBSYmQAxN36Nsm7xz33Nw1leKiMCWhU9RWvnbuEtc+LfG0H2YaI2cwcAwbANYqCuK28cWUvvaAI2MoY7dEhMbN99lGGuAXQa5i6WiZR+a9hWlRlS6oYkhZ0dY5MQIZnDH8zTci5D7Eo9ixjwy36Zd6oLcF/c8EJdPkD0ZTgIal8xB6SYA8F6szn0vTSIiuUEoPQTkp7tinDTFierx8XdLNBcuc3/PKJdAFgSJUWiCuvLILCLLBKfM58AUj6wiZqL+wBmprXJoVByT0B2WfpLl51ceC+xjm5VY5P5By7995NoMfilclwPfBzQsFkrvCrUVsEUZbob0V2ivIIVsbIs57Rb851P1tkiuuOrFwxUXaRoaqXqL4hrDJsUttm83jNWy/bsobcuBgCaC4h8mGnGr/GSml3Vu36SMG3NbrKiVVzyW9zUGiKV1TjJRQMb/O6XklFoJ1g+qwVmapa3X1Ww71thuVHXXD9bAgSMKuoXsz/MwiIizpfOwpuQRqRgh/SB8+2O3JL1c0YADeDfe6ojuoDylcBX8yZITkc1RJUvTVWwM+0PFVRUdSpY1GI0sG2muC7dnrKq1klVs3GjN+RSqPTIibkqpJiluZVvcRNJcencXjfMw8CQBF5xr1O+0rxtqDPU4J+fhipwsWRengFfvgEh2FAJIJmVvOx3Sp7IKJ97egpij4zU582AK9T90iaiyJ66x4nBFVu2+pujWUDE4alBlC6TZUAbIdbg+X9QUubp9q13npcxt6VH3XpvYvcm9uErcAzT53zTtJDXOGdd6nm6Ddv4qPQ6I47H0wlPX56yLHvvyapcWz4KzDsLPJgkA0aer+/GHq4ffbqZ75K6hGI7Tqlm2VcrdMqQGQ1gDun/kgfWbP6ymHyWOZtMycLB/XSwnV6oEd0vmCjNYwY0QXADz5CJsv4j/byePH7OfZ48wb40IoyYLTOQ4ZsnRe9I29cn2ZwX5wA8KpzzuclOwGbjl2nwdSNAhwSaS50rCWyBA1kZiCwznQx9OirChxHfvWJ0un0m2kedPJu8ad3qy3nrihWZJfBjpELCTX29rKXTqdRg7uj1y2l5w+4bc9s2s/Rm31n0+B7GDhSJu0p2db5eHrVtfs/H1ssTzarD3fKx9x6i/22W+wYrzPzNyo2dpGI6orQGxax8O7Q7f3yPifYmwaS8Qmad38wzXLYQVI3shpUOkdEh3kSJ/jTZUrp8KICV51oubDzRA/pNUkDsKFMc43GxFkjdK0QqKRsdiuOsgoO04CGQWUwZHfzzflARyi/RvvoVbI9C/AeBVVX0L76B8e6uKS7stLdVeO7Hal7YXMWfeEieFJr/ISEvE7AWmPQmIkVz9kzrkhZQlo38+4sggVDCuimRTMWzVldboNJW/t3I3rmd9Xg7rplQTI64lkZjWf/ND7/uHf9IhQnik+RQhvPdtTw5H/N1fywX9+W9IIP6NoyoAAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=0df9bed283ed12103f8ab6a6feaad3c9^sys_idNOT IN2abb369683ed12103f8ab6a6feaad37b,6abb369683ed12103f8ab6a6feaad37a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Sync Work Notes Between Expense and Approval">0df9bed283ed12103f8ab6a6feaad3c9</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>297950a3-c0c3-4378-8f92-f80fcd4dabb1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:39:32</sys_created_on>
+        <sys_id>2abb369683ed12103f8ab6a6feaad37b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:39:32</sys_updated_on>
+        <ui_id>e7c0da9d-6e0f-4d5b-bcc0-633af5e0a5a8</ui_id>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K5Wf2yhfhNK3iarSJAYSMF4Yslz7Bqw5TuY40C7qf99N4qRVQaxMvFTrm+/1uT7nxKe+r4kUZEZiEH5wFiQ8CqIo9P1wGgfLJFoGoYgYQEDGRLMMcKcBnhuB62emqqZQ1xBDINgpTACBkzhI/Mk09KNJGPlxkqZnScLBu25xmw0ihSwLxdZ3bgBW+JNUwoAms/uHMSmYwbMsGDKr91qHklVsCQq3Xvds99nbddGsRc6rDLSlsi9eOOTcdUZf59hBUEMn8McEVha0ACSSMlXCmGRMC2ZzsyYzayosGGDiSqv1sONJatsJzdiqlL/x5Nhv9qWAyrgzYVjesqWCeWdS10rnzLIbnM5tZQbPcsmh7HwRkLJK2fPdWrfhqrAy1x3ENoMdOldVpi87V8gwYOebVCVQAUWjtWHfSUtvnvKX657oQurWFidT5ZypYcWsNXJZ2YZOTUBB63PGikLqR1qY/Fm2YKSSeY8KF16q8hc8s5SP2mO84e2hs8xbYH3elu+YkY2IbzgGwZsxKdfluWJluZWCPtJfVcOkE+Yk0NaF1gLa3oYGzI0s7Bc86hkc8c3YRWJ58t4t42fbS7UzcxuLFZ2eJqd+SGGFBNDLjCJnVM0U7b7DqyAcAvlYUg7Q0Cfl1h3wliYXlle1i13s6LJruKicfFpUpscWFSfl6LPyt4T44bv/wzu3qQ1FuZOOl9z8pDpHwT8q349EXX8vkD4IGni8MuiY9bZ73no1/mHCx7JzgLo+OwsJSpRvyO2DAxlSt0A7+Xvhcc3RnWsOb82nJQhf5PZ3ZDn6b56chz9po3zDhwkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment>Lookup existing approval record</comment>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Sync Work Notes Between Expense and Approval">0df9bed283ed12103f8ab6a6feaad3c9</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:39:32</sys_created_on>
+        <sys_id>6abb369683ed12103f8ab6a6feaad37a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:39:32</sys_updated_on>
+        <ui_id>e4e1da7e-e002-4160-8203-23046ff966ce</ui_id>
+        <values>H4sIAAAAAAAA/+VY227bOBD9FUHPjlfyTXbeFjEMFOg2QJP2pVsQlEjFxNKkSlK5Gf73HYqibdiKbaE2kKCPJIecMzPnjEj9WIaMhNchmUSTfDIZjpMo6vejaDTqZzhO0/4oS6MUD8JOKPCCgqXBKacwfMS8tONnNE5GSdRD9LmgQlO0QLgolIR15G0J0wXHL99bbMnmjBNFRXj942cnLLAC74aq8Hq5s3QqfI5TysH0vnawE455KdZDVK25uc/b24IvbkEqYqFEnZA+GyoIBQw55pp2wgUWBBupXtYzimJyK/hmYs6EgRNDa/ys2Sv4HUfWLqcQVUbd2npYeZ66DLqlfIoNvjOqzEypavNsLllGtcsJoTkuubnZnnMGt4VhUrgtLnS3W/JyIb64lITrA3zBYKaEMhFa2GAt+jqU/G4un756pDMmqrzUi1xmmK9H2BjF0tJYPMuQcrqAg9ACCs/EA7LVZ9VmwLLoPnAYdHMun8CpZg+iizMLvAu5xd0ZzE+r6e9YMRvFP3AMbAZAjANLHIuQlqWq0vmIMl7qakFhod1Z4aoT6hd9w7HWm8gh7ehXaXG7PNQRI5c0uyVTrDB/wxGPtA5u1fEqGh6k4WRDu0wKwiwKvSUlLwdG/i3hALJcfisgYEpQ3M1KBTk2XVEuUqpWq31VtdzdUmDHI/MCu9kOrSncWmp7c5+bDqilFp9NaoMo+mhiA+fvT2vt1eNScERCMTlINLLhlJbKIJfLLQ3t66I110+A4Ll+a9kZpC9voaqpnjPKSdNXZWYXdr4qvT/3q/IuiQ6ACHIVZIIzUV0TAOilFDA8SL803uFaRbEN/6s5rLN9HeDAyOC1tRpOgOPVcAe+g3uHpwGi7/sVZXZ7vp+sRdA/mwj6vfOJYLkOdZ3Mhrz726GtqLd/tfZ41x5ouLUhXjWJrJXPuK3P3mpfxP1WKt4mnFuZvsG7M18h31Bl55JtYA5ba3/IaRg9MfJAzca7tyLSPGH+X9N6LUzkC1WFd4HraHzwVZRuXUdZjhZQOVbArVnRDMihEVYU5bIUBNX35Q2RbCVzprSpjfebzVcK+hGBBHEGZk6DyjpYW7f8IB+Pw6fyUx74QGpvOoBAgiqQYB1Iu7DbNK7BGS+ql2hcM8x4VRF4DhXbbw+lpHqjeR0p5gFWnNjZTgQVnxXU77e+Jhk0tsAjWD/E2/r87SmjOB308Cjpx3EUxRFJonGSxONRmo9wMsg3OkVIiww6KpycA1XgeOSp4esc7fcg11bbNpsTUHkKTqWwT+1eYgILC+obeFjHgddNJZWSUyx2uso9fCv+mtX4a74O32Vn+RB/m0p2v5ttN9WY70vdH0r2TbBfJf1kaTamUW8ck+xqnMTJ1SAno6sJwcMrPEmHSZ/QbJCf80rw839FuXCg6RUAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=0df9bed283ed12103f8ab6a6feaad3c9"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=0df9bed283ed12103f8ab6a6feaad3c9^sys_idNOT IN6abb369683ed12103f8ab6a6feaad37c,eebb369683ed12103f8ab6a6feaad37d"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">11bbf29683ed12103f8ab6a6feaad30c</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Sync Work Notes Between Expense and Approval">0df9bed283ed12103f8ab6a6feaad3c9</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:39:32</sys_created_on>
+        <sys_id>6abb369683ed12103f8ab6a6feaad37c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:39:32</sys_updated_on>
+        <ui_id>297950a3-c0c3-4378-8f92-f80fcd4dabb1</ui_id>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPjvFH4rV5K8kKhbYZTSiUUcyNdJ2IyZZnyUmzkP++K9v5YM3YCnncm3Wke3XO0T14y3Rty9qamb4xRi4KNvz26jFZOIy+t6yAHNmQcV0IaaUu0gbw2ApU7TboU0hTKtg8HxG+lEpU2HUroaIaixUbbn/bkoIKsgCy8JqHPI6SOAqC6KofzpN4HkYiBoSYGiqYo6Kjoz2NT/cN4v2Rn92UDje2ksWiW993XaZ7UFfCsQoDj+GbxUIg8clAGfRYDoUAq6vNAakQxKRQR2ApC9sKzuHNyJ90YTQYuIMZkkTeuXFYzmCucNy61W5lY7BAdGpu6+pgnpYcTWuQwAxqZUenWHtgUjq5bYl1jbtqreq8eGxdYYcGJ49TG0wFlk6to99pyaZLvX7aM72VReNMt6k0B3VYgSX/5rV1fLYMFebUKM2hLMnVtKz0SjbFxCX3F4oWfqb0mi51E+YDd8R9Mhf8W8LHDfwMlXQqHqgNFbc052AkT5tppHZkE7Kdx8zGjBQYcxRJDqc/akexldyJS1t/XAmvZGlv6OYVdjp23vvhPpnr7Rb7GAr4jD2kkez1wyToXUVB3IvioJ9k2XWScPSfkNMQ+USaZINKpdjt7qaPk9mXh6+zl/fhuFTbjyXsGgbZIAwG5xPWT84l7Ey2Phir6C+xcu/5j6kKguB/rC4SK2nSNgydtubyC6bq1UWovfPgNZeGqDXPdLf/s7iNDQ2Y5KfQWlffnagjtvsFBdQgiqMGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e1bbf29683ed12103f8ab6a6feaad30e</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Sync Work Notes Between Expense and Approval">0df9bed283ed12103f8ab6a6feaad3c9</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>297950a3-c0c3-4378-8f92-f80fcd4dabb1</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:39:32</sys_created_on>
+        <sys_id>eebb369683ed12103f8ab6a6feaad37d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:39:32</sys_updated_on>
+        <ui_id>27790436-7b4e-481d-b2a4-d0eb6aff0263</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=0df9bed283ed12103f8ab6a6feaad3c9"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=0df9bed283ed12103f8ab6a6feaad3c9"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_0df9bed283ed12103f8ab6a6feaad3c9^sys_idNOT IN4df9bed283ed12103f8ab6a6feaad3ec,8df9fed283ed12103f8ab6a6feaad30c,8df9fed283ed12103f8ab6a6feaad313"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0df9bed283ed12103f8ab6a6feaad3c9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:48</sys_created_on>
+        <sys_id>4df9bed283ed12103f8ab6a6feaad3ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:31:48</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0df9bed283ed12103f8ab6a6feaad3c9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:48</sys_created_on>
+        <sys_id>8df9fed283ed12103f8ab6a6feaad30c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:31:48</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0df9bed283ed12103f8ab6a6feaad3c9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:48</sys_created_on>
+        <sys_id>8df9fed283ed12103f8ab6a6feaad313</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:31:48</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_0df9bed283ed12103f8ab6a6feaad3c9"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_0df9bed283ed12103f8ab6a6feaad3c9"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_0df9bed283ed12103f8ab6a6feaad3c9"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>e529fa9283ed12103f8ab6a6feaad3e4</sys_id>
+        <latest_snapshot>0df9bed283ed12103f8ab6a6feaad3c9</latest_snapshot>
+        <compiler_build>glide-xanadu-07-02-2024__patch1-hotfix2a-10-05-2024_10-18-2024_1248.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=e529fa9283ed12103f8ab6a6feaad3e4^sys_idNOT IN95f9fed283ed12103f8ab6a6feaad322"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerUniqueChange</binding_strategy>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"95f9fed283ed12103f8ab6a6feaad322","name":"plan","plan_signature":null}}</plan>
+        <plan_id>e529fa9283ed12103f8ab6a6feaad3e4</plan_id>
+        <snapshot>7adb3a9683ed12103f8ab6a6feaad30d</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 03:31:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>95f9fed283ed12103f8ab6a6feaad322</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 03:39:33</sys_updated_on>
+        <trigger display_value="">95f9fed283ed12103f8ab6a6feaad320</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=e529fa9283ed12103f8ab6a6feaad3e4"/>
+</record_update>

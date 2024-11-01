@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="e845f65e83ad12103f8ab6a6feaad360" sys_domain="global" table="x_876702_expense_m_approval_table" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-11-01 03:11:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3045f65e83ad12103f8ab6a6feaad364</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_876702_expense_m_approval_table" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">e845f65e83ad12103f8ab6a6feaad360</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">9b5ed05283e112103f8ab6a6feaad361</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-11-01 03:11:17</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-11-01 03:11:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f845f65e83ad12103f8ab6a6feaad364</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_876702_expense_m_approval_table" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">e845f65e83ad12103f8ab6a6feaad360</sys_ui_form>
+            <sys_ui_section caption="Note" display_value="Note" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">2445f65e83ad12103f8ab6a6feaad35f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-11-01 03:11:17</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_876702_expense_m_approval_table</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-11-01 03:11:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e845f65e83ad12103f8ab6a6feaad360</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_876702_expense_m_approval_table</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+            <sys_update_name>sys_ui_form_sections_e845f65e83ad12103f8ab6a6feaad360</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-11-01 03:11:17</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>
