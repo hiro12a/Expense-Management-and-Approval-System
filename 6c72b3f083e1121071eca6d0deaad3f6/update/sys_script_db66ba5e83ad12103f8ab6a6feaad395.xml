@@ -20,7 +20,7 @@
         </filter_condition>
         <is_rest>false</is_rest>
         <message/>
-        <name>Sync Worknotes from Expense</name>
+        <name>Sync WN from Expense To Approval </name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -30,26 +30,26 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-
-    // Initialize a GlideRecord object for the approval table
+    // Initialize a GlideRecord object for the expense submission table
     var approvalRecord = new GlideRecord('x_876702_expense_m_approval_table');
     
-    // Check if there's an existing approval record linked to the current expense
-    if (approvalRecord.get('expense_id', current.sys_id)) {
+    // Query for the expense record linked to the current approval by matching the expense_id
+    approvalRecord.addQuery('expense_id', current.expense_id); // Make sure to use `current.expense_id` correctly
+    approvalRecord.query();
+
+    // If an expense record exists
+    if (approvalRecord.next()) {
         
-        // Get the most recent work note entry from the current record
+        // Get the most recent work note entry from the approval record (current)
         var currentWN = current.work_notes.getJournalEntry(1);
 
-        // Get the most recent work note entry from the approval record
-        var approvalWN = approvalRecord.work_notes.getJournalEntry(1);
-
-        if (approvalRecord.indexOf(currentWN) === -1) {
-            // Append the new work note to the existing notes
-            approvalRecord.work_notes = existingWorkNotes + (existingWorkNotes ? '\n' : '') + currentWN;
-            approvalRecord.update();
-        }
+        // Check if the current work note is already in the existing work notes
+        if(approvalRecord.work_notes.getJournalEntry(1) == '' || currentWN.indexOf(approvalRecord.work_notes.getJournalEntry(1)) <0)
+		{
+			approvalRecord.work_notes = currentWN;
+			approvalRecord.update();
+		}
     }
-    
 })(current, previous);
 ]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -58,15 +58,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>db66ba5e83ad12103f8ab6a6feaad395</sys_id>
-        <sys_mod_count>12</sys_mod_count>
-        <sys_name>Sync Worknotes from Expense</sys_name>
+        <sys_mod_count>58</sys_mod_count>
+        <sys_name>Sync WN from Expense To Approval </sys_name>
         <sys_overrides/>
         <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
         <sys_policy/>
         <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
         <sys_update_name>sys_script_db66ba5e83ad12103f8ab6a6feaad395</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-01 04:24:03</sys_updated_on>
+        <sys_updated_on>2024-11-02 04:13:49</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

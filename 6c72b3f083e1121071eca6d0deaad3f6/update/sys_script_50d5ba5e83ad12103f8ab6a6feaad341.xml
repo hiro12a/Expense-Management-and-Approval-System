@@ -20,7 +20,7 @@
         </filter_condition>
         <is_rest>false</is_rest>
         <message/>
-        <name>Sync Worknotes from Approval</name>
+        <name>Sync WN from Approval To Expense</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -34,7 +34,7 @@
     var expenseRecord = new GlideRecord('x_876702_expense_m_expense_submission_table');
     
     // Query for the expense record linked to the current approval by matching the expense_id
-    expenseRecord.addQuery('sys_id', current.expense_id); // Make sure to use `current.expense_id` correctly
+    expenseRecord.addQuery('expense_id', current.expense_id); // Make sure to use `current.expense_id` correctly
     expenseRecord.query();
 
     // If an expense record exists
@@ -61,15 +61,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>50d5ba5e83ad12103f8ab6a6feaad341</sys_id>
-        <sys_mod_count>14</sys_mod_count>
-        <sys_name>Sync Worknotes from Approval</sys_name>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>Sync WN from Approval To Expense</sys_name>
         <sys_overrides/>
         <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
         <sys_policy/>
         <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
         <sys_update_name>sys_script_50d5ba5e83ad12103f8ab6a6feaad341</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-01 04:22:47</sys_updated_on>
+        <sys_updated_on>2024-11-02 04:11:53</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
