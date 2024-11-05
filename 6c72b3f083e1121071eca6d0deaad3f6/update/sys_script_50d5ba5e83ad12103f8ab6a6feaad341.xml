@@ -32,22 +32,31 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
     // Initialize a GlideRecord object for the expense submission table
     var expenseRecord = new GlideRecord('x_876702_expense_m_expense_submission_table');
-    
-    // Query for the expense record linked to the current approval by matching the expense_id
-    expenseRecord.addQuery('expense_id', current.expense_id); 
+
+    // Query for the expense record linked to the current approval record
+    expenseRecord.addQuery('expense_id', current.expense_id);
     expenseRecord.query();
 
+    // Get the latest work note entry from the current approval record
+    var approvalWorkNote = current.work_notes.getJournalEntry(1);
 
-    // If an expense record exists
+    // Remove timestamp and username from work note
+    var regex = new RegExp('\n');
+    var index = approvalWorkNote.search(regex);
+    var cleanApprovalWorkNote = (index > 0) ? approvalWorkNote.substring(index + 1).trim() : approvalWorkNote;
+
+    // Update the expense record if it exists and work note is not duplicate
     if (expenseRecord.next()) {
-        // Get the most recent work note entry from the approval record (current)
-   	    var currentWN = current.work_notes.getJournalEntry(1);
+        var expenseWorkNote = expenseRecord.work_notes.getJournalEntry(1);
+        var indexExpense = expenseWorkNote.search(regex);
+        var cleanExpenseWorkNote = (indexExpense > 0) ? expenseWorkNote.substring(indexExpense + 1).trim() : expenseWorkNote;
 
-		if(expenseRecord.work_notes.getJournalEntry(1) == '' || currentWN.indexOf(expenseRecord.work_notes.getJournalEntry(1)) <0)
-		{
-			expenseRecord.work_notes = currentWN;
-			expenseRecord.update();
-		}
+        if (cleanExpenseWorkNote.indexOf(cleanApprovalWorkNote) === -1) {
+            expenseRecord.work_notes = expenseRecord.work_notes + '\n' + cleanApprovalWorkNote;
+            expenseRecord.update();
+        }
+    } else {
+        gs.info('No matching expense record found for the current approval.');
     }
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -56,7 +65,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>50d5ba5e83ad12103f8ab6a6feaad341</sys_id>
-        <sys_mod_count>39</sys_mod_count>
+        <sys_mod_count>86</sys_mod_count>
         <sys_name>Sync WN from Approval To Expense</sys_name>
         <sys_overrides/>
         <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
@@ -64,7 +73,7 @@
         <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
         <sys_update_name>sys_script_50d5ba5e83ad12103f8ab6a6feaad341</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-05 04:36:42</sys_updated_on>
+        <sys_updated_on>2024-11-05 21:31:26</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
