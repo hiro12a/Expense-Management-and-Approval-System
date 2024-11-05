@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="INSERT_OR_UPDATE">
+        <operation>create</operation>
+        <source_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-05 02:57:31</sys_created_on>
+        <sys_id>4e78172383e5d2103f8ab6a6feaad301</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>sys_user_grmember</sys_name>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name>sys_scope_privilege_4e78172383e5d2103f8ab6a6feaad301</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-05 02:57:31</sys_updated_on>
+        <target_name>sys_user_grmember</target_name>
+        <target_scope display_value="Global">global</target_scope>
+        <target_type>sys_db_object</target_type>
+    </sys_scope_privilege>
+</record_update>

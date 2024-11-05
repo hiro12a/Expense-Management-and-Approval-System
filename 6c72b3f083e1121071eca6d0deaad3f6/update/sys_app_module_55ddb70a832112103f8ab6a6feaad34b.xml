@@ -18,14 +18,14 @@
         <query/>
         <report/>
         <require_confirmation>true</require_confirmation>
-        <roles/>
+        <roles>x_876702_expense_m.approval_table_user,x_876702_expense_m.expense_approval</roles>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-31 13:50:43</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>55ddb70a832112103f8ab6a6feaad34b</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>All Approvals</sys_name>
         <sys_overrides/>
         <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
@@ -33,7 +33,7 @@
         <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
         <sys_update_name>sys_app_module_55ddb70a832112103f8ab6a6feaad34b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-31 15:50:27</sys_updated_on>
+        <sys_updated_on>2024-11-02 14:10:10</sys_updated_on>
         <timeline_page/>
         <title>All Approvals</title>
         <uncancelable>false</uncancelable>

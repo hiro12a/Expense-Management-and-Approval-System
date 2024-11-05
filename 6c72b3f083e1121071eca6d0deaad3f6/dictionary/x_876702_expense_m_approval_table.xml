@@ -7,6 +7,8 @@
         <element label="Approval Name" max_length="40" name="approval_name" read_only="true" type="string"/>
         <element label="Work Notes" max_length="255" name="work_notes" type="journal_input"/>
         <element label="Expense ID" max_length="32" name="expense_id" read_only="true" reference="x_876702_expense_m_expense_submission_table" type="reference"/>
+        <element label="Amount" max_length="40" name="amount" read_only="true" type="currency"/>
+        <element label="Finance Approver" max_length="40" name="finance_approver" read_only="true" type="string"/>
         <element choice="1" label="Status" max_length="40" name="status" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Pending Approval" sequence="0" value="pending_approval"/>

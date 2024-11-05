@@ -32,23 +32,39 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
     // Initialize a GlideRecord object for the expense submission table
     var approvalRecord = new GlideRecord('x_876702_expense_m_approval_table');
+    var financeRecord = new GlideRecord('x_876702_expense_m_finance_table');
     
-    // Query for the expense record linked to the current approval by matching the expense_id
-    approvalRecord.addQuery('expense_id', current.expense_id); // Make sure to use `current.expense_id` correctly
+    // Query for the approval record linked to the current expense record
+    approvalRecord.addQuery('expense_id', current.expense_id); 
     approvalRecord.query();
 
-    // If an expense record exists
-    if (approvalRecord.next()) {
-        
-        // Get the most recent work note entry from the approval record (current)
-        var currentWN = current.work_notes.getJournalEntry(1);
+    // Query for the finance record linked to the current expense record
+    financeRecord.addQuery('expense_id', current.expense_id);
+    financeRecord.query();
 
+    // Get the most recent work note entry from the approval record (current)
+    var currentWN = current.work_notes.getJournalEntry(1);
+
+    // Update work notes if an approval record exists
+    if (approvalRecord.next()) {
+        var existingApproval = approvalRecord.work_notes.toString();
+        
         // Check if the current work note is already in the existing work notes
-        if(approvalRecord.work_notes.getJournalEntry(1) == '' || currentWN.indexOf(approvalRecord.work_notes.getJournalEntry(1)) <0)
-		{
-			approvalRecord.work_notes = currentWN;
-			approvalRecord.update();
-		}
+        if (!existingApproval.includes(currentWN)) {
+            approvalRecord.work_notes = existingApproval + (existingApproval ? '\n' : '') + currentWN;
+            approvalRecord.update();
+        }
+    }
+
+    // Update work notes if a finance record exists
+    if (financeRecord.next()) {
+        var existingFinance = financeRecord.work_notes.toString();
+        
+        // Check if the current work note is already in the existing work notes
+        if (!existingFinance.includes(currentWN)) {
+            financeRecord.work_notes = existingFinance + (existingFinance ? '\n' : '') + currentWN;
+            financeRecord.update();
+        }
     }
 })(current, previous);
 ]]></script>
@@ -58,7 +74,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>db66ba5e83ad12103f8ab6a6feaad395</sys_id>
-        <sys_mod_count>58</sys_mod_count>
+        <sys_mod_count>66</sys_mod_count>
         <sys_name>Sync WN from Expense To Approval </sys_name>
         <sys_overrides/>
         <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
@@ -66,7 +82,7 @@
         <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
         <sys_update_name>sys_script_db66ba5e83ad12103f8ab6a6feaad395</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-02 04:13:49</sys_updated_on>
+        <sys_updated_on>2024-11-05 04:00:28</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

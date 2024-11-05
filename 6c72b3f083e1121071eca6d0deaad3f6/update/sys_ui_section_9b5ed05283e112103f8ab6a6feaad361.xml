@@ -4,111 +4,139 @@
             <element>number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-10-31 16:39:24</sys_created_on>
-            <sys_id>2ca4e09a83e112103f8ab6a6feaad395</sys_id>
+            <sys_created_on>2024-11-05 03:16:18</sys_created_on>
+            <sys_id>05cc9ba783e5d2103f8ab6a6feaad33c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">9b5ed05283e112103f8ab6a6feaad361</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-10-31 16:39:24</sys_updated_on>
+            <sys_updated_on>2024-11-05 03:16:18</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>amount</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-11-05 03:16:18</sys_created_on>
+            <sys_id>8dcc9ba783e5d2103f8ab6a6feaad33c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">9b5ed05283e112103f8ab6a6feaad361</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-11-05 03:16:18</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>approval_date</element>
-            <position>1</position>
+            <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-10-31 16:39:24</sys_created_on>
-            <sys_id>a0a4e09a83e112103f8ab6a6feaad396</sys_id>
+            <sys_created_on>2024-11-05 03:16:18</sys_created_on>
+            <sys_id>05cc9ba783e5d2103f8ab6a6feaad33d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">9b5ed05283e112103f8ab6a6feaad361</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-10-31 16:39:24</sys_updated_on>
+            <sys_updated_on>2024-11-05 03:16:18</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>status</element>
-            <position>2</position>
+            <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-10-31 16:39:24</sys_created_on>
-            <sys_id>28a4e09a83e112103f8ab6a6feaad396</sys_id>
+            <sys_created_on>2024-11-05 03:16:18</sys_created_on>
+            <sys_id>89cc9ba783e5d2103f8ab6a6feaad33d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">9b5ed05283e112103f8ab6a6feaad361</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-10-31 16:39:24</sys_updated_on>
+            <sys_updated_on>2024-11-05 03:16:18</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>3</position>
+            <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-10-31 16:39:24</sys_created_on>
-            <sys_id>aca4e09a83e112103f8ab6a6feaad396</sys_id>
+            <sys_created_on>2024-11-05 03:16:18</sys_created_on>
+            <sys_id>01cc9ba783e5d2103f8ab6a6feaad33e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">9b5ed05283e112103f8ab6a6feaad361</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-10-31 16:39:24</sys_updated_on>
+            <sys_updated_on>2024-11-05 03:16:18</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>expense_id</element>
-            <position>4</position>
+            <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-10-31 16:39:24</sys_created_on>
-            <sys_id>24a4e09a83e112103f8ab6a6feaad397</sys_id>
+            <sys_created_on>2024-11-05 03:16:18</sys_created_on>
+            <sys_id>85cc9ba783e5d2103f8ab6a6feaad33e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">9b5ed05283e112103f8ab6a6feaad361</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-10-31 16:39:24</sys_updated_on>
+            <sys_updated_on>2024-11-05 03:16:18</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>approver_id</element>
-            <position>5</position>
+            <position>6</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-10-31 16:39:24</sys_created_on>
-            <sys_id>a8a4e09a83e112103f8ab6a6feaad397</sys_id>
+            <sys_created_on>2024-11-05 03:16:18</sys_created_on>
+            <sys_id>0dcc9ba783e5d2103f8ab6a6feaad33e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">9b5ed05283e112103f8ab6a6feaad361</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-10-31 16:39:24</sys_updated_on>
+            <sys_updated_on>2024-11-05 03:16:18</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>finance_approver</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-11-05 03:16:18</sys_created_on>
+            <sys_id>81cc9ba783e5d2103f8ab6a6feaad33f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">9b5ed05283e112103f8ab6a6feaad361</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-11-05 03:16:18</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
-            <position>6</position>
+            <position>8</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-10-31 16:39:24</sys_created_on>
-            <sys_id>20a4e09a83e112103f8ab6a6feaad398</sys_id>
+            <sys_created_on>2024-11-05 03:16:18</sys_created_on>
+            <sys_id>09cc9ba783e5d2103f8ab6a6feaad33f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">9b5ed05283e112103f8ab6a6feaad361</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-10-31 16:39:24</sys_updated_on>
+            <sys_updated_on>2024-11-05 03:16:18</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>comments</element>
-            <position>7</position>
+            <position>9</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-10-31 16:39:24</sys_created_on>
-            <sys_id>a4a4e09a83e112103f8ab6a6feaad398</sys_id>
+            <sys_created_on>2024-11-05 03:16:18</sys_created_on>
+            <sys_id>8dcc9ba783e5d2103f8ab6a6feaad33f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_876702_expense_m_approval_table" sys_domain="global" view="Default view">9b5ed05283e112103f8ab6a6feaad361</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-10-31 16:39:24</sys_updated_on>
+            <sys_updated_on>2024-11-05 03:16:18</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

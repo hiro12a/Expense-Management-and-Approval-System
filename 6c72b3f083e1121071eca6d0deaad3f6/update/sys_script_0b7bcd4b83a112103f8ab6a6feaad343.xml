@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_876702_expense_m_approval_table</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_876702_expense_m_approval_table">status=approved^finance_approverISEMPTY^EQ<item display_value="Approved" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="approved"/>
+            <item endquery="false" field="finance_approver" goto="false" newquery="false" operator="ISEMPTY" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Auto Create Finance Record</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Update the date to today
+	current.approval_date = new GlideDateTime().getDate();
+	gs.info("Approval date set to: " + current.approval_date);
+
+
+	// Create a new finance record
+	var financeRecord = new GlideRecord('x_876702_expense_m_finance_table');
+
+	// Set the expense_id and amount for the record
+	financeRecord.expense_id = current.expense_id;
+	financeRecord.amount = current.amount;
+
+	// Array to hold finance approvers
+	var approvers = [];
+
+	// Get the users within the finance approver group
+	var financeGroup = new GlideRecord('sys_user_grmember');
+	financeGroup.addQuery('group.name', 'Finance Approver');
+	financeGroup.query();
+
+	// Add each approvers sys_id to the array
+	while(financeGroup.next())
+	{
+		approvers.push(financeGroup.user.sys_id.toString());
+	}
+
+	// Check if there are any finance approvers
+	if(approvers.length > 0)
+	{
+		// Select a random approver
+		var randomApprover = Math.floor(Math.random() * approvers.length);
+		var selectedApproverID = approvers[randomApprover];
+
+		// Set the approvers ID to the finance record so we can later display their name
+		financeRecord.finance_approver = selectedApproverID;
+
+		// Query the sys_user table to get the approver's name
+        var userRecord = new GlideRecord('sys_user');
+        if (userRecord.get(selectedApproverID)) {
+			current.finance_approver = userRecord.name;
+
+            gs.info('Finance Approver: ' + current.finance_approver); // Logs the approver's name
+        } else {
+            gs.info('Finance Approver: Not found');
+        }
+
+		current.update();
+
+
+		// Insert the record
+		financeRecord.insert();
+
+	}
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-03 03:25:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0b7bcd4b83a112103f8ab6a6feaad343</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>Auto Create Finance Record</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name>sys_script_0b7bcd4b83a112103f8ab6a6feaad343</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-05 03:25:27</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=0b7bcd4b83a112103f8ab6a6feaad343"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>0b7bcd4b83a112103f8ab6a6feaad343</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-03 03:25:25</sys_created_on>
+        <sys_id>c3ab89cb832512103f8ab6a6feaad3df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-03 03:25:25</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
