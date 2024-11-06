@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=980000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Change the status of expense record to 'Pending Reimbursement' after the Finance Record has been created</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>change_status_of_expense_after_finance_is_reated</internal_name>
+        <label_cache>[{"name":"7348bfea-6377-4800-a9c8-608233750fdf.Record","label":"1 - Look Up Record➛Expense Submission Table Record","reference":"x_876702_expense_m_expense_submission_table","reference_display":"Expense Submission Table","type":"reference","base_type":"reference","usedInstances":{"c66d08c6-2b5a-4ac8-a3f4-2bfaca9a6b08":["record"],"cce9d41e-e412-45de-9720-ca6602a4839d":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created or Updated_1.current.reimbursement_status","label":"Trigger - Record Created or Updated➛Finance Table Record➛Reimbursement Status","reference":"","reference_display":"Reimbursement Status","type":"choice","base_type":"choice","parent_table_name":"x_876702_expense_m_finance_table","column_name":"reimbursement_status","choices":[{"label":"-- None --","used":false,"image":"","reference":false,"selected":false,"missing":false,"rawLabel":"-- None --","value":""},{"label":"Unprocessed","used":false,"image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Unprocessed","value":"unprocessed","parameters":{"name":"x_876702_expense_m_finance_table","dependent_values":[""]}},{"label":"Processed","used":false,"image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Processed","value":"processed","parameters":{"name":"x_876702_expense_m_finance_table","dependent_values":[""]}}],"usedInstances":{"49cfb8b6-67cd-4a88-b5cb-886e5f94d9cf":["condition"],"86bc372f-b907-4d99-903b-bf21b0cf6e4e":["condition"]}},{"name":"Created or Updated_1.current.expense_id","label":"Trigger - Record Created or Updated➛Finance Table Record➛Expense ID","reference":"x_876702_expense_m_expense_submission_table","reference_display":"Expense Submission Table","type":"reference","base_type":"reference","parent_table_name":"x_876702_expense_m_finance_table","column_name":"expense_id","usedInstances":{"7348bfea-6377-4800-a9c8-608233750fdf":["conditions"]}},{"name":"Created_1.current.expense_id","label":"Trigger - Record Created➛Finance Table Record➛Expense ID","reference":"x_876702_expense_m_expense_submission_table","reference_display":"Expense Submission Table","type":"reference","base_type":"reference","parent_table_name":"x_876702_expense_m_finance_table","column_name":"expense_id","usedInstances":{"3b3e149d-5a90-4d95-a163-6ab252f0bb5c":["conditions"],"d19adcdb-fbf5-4043-ada7-631d06f91374":["condition"]}}]</label_cache>
+        <master_snapshot>4f2914c0833156103f8ab6a6feaad37a</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Change Status Of Expense After Finance is created</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>3feb90c4833156103f8ab6a6feaad35a</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:14:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0c389840833156103f8ab6a6feaad3bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Change Status Of Expense After Finance is created</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name>sys_hub_flow_0c389840833156103f8ab6a6feaad3bb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:39:11</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=0c389840833156103f8ab6a6feaad3bb"/>
+    <sys_variable_value action="delete_multiple" query="document_key=0c389840833156103f8ab6a6feaad3bb"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_876702_expense_m_finance_table">^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>true</on_update>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:46</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3feb90c4833156103f8ab6a6feaad35a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:46</sys_updated_on>
+        <table>x_876702_expense_m_finance_table</table>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>0c389840833156103f8ab6a6feaad3bb</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:46</sys_created_on>
+        <sys_id>b7eb90c4833156103f8ab6a6feaad35b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:46</sys_updated_on>
+        <trigger display_value="">3feb90c4833156103f8ab6a6feaad35a</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=0c389840833156103f8ab6a6feaad3bb^sys_idNOT INb7eb90c4833156103f8ab6a6feaad35b"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=0c389840833156103f8ab6a6feaad3bb"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=0c389840833156103f8ab6a6feaad3bb^sys_idNOT IN84389840833156103f8ab6a6feaad3be"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>0c389840833156103f8ab6a6feaad3bb</id>
+        <name>Change Status Of Expense After Finance is reated</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:14:24</sys_created_on>
+        <sys_id>84389840833156103f8ab6a6feaad3be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:14:24</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=84389840833156103f8ab6a6feaad3be"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=0c389840833156103f8ab6a6feaad3bb^sys_idNOT IN5fcb5c84833156103f8ab6a6feaad3ec,610950c0833156103f8ab6a6feaad320,690910c0833156103f8ab6a6feaad3ff"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDCollection</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>global</scope_name>
+        <serialized_content>{"FlowDesigner:FDCollection":{"$COCollectionField":[{"FDChangeDetails":{"previous_display_value":"String","previous_display_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Previous Display Value\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\"}"},"previous_value":"String","previous_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Previous Value\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\"}"},"current_display_value":"String","current_display_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Current Display Value\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"current_value":"String","current_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Current Value\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\"}"},"field_name":"String","field_name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Field Name\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\"}"}}}],"$COCollectionField.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"Changed Fields\",\"mandatory\":\"false\",\"child_name\":\"FDChangeDetails\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"100\",\"max_length\":\"4000\"}"},"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FDCollection.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"Changed Fields\",\"mandatory\":\"false\",\"child_name\":\"FDChangeDetails\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"100\",\"max_length\":\"4000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-06-13 23:19:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>f4f014150f023300ecf0cc52ff767eed</sys_id>
+        <sys_mod_count>101</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Flow Designer Designer Model" source="com.glide.hub.designer_backend.model">178d9a8f65d012104f340572a9474038</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Global">global</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-09-28 05:06:11</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Change Status Of Expense After Finance is created">0c389840833156103f8ab6a6feaad3bb</model>
+        <model_id>0c389840833156103f8ab6a6feaad3bb</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_0c389840833156103f8ab6a6feaad3bb</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:11</sys_created_on>
+        <sys_id>5fcb5c84833156103f8ab6a6feaad3ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:11</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=5fcb5c84833156103f8ab6a6feaad3ec"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Change Status Of Expense After Finance is created">0c389840833156103f8ab6a6feaad3bb</model>
+        <model_id>0c389840833156103f8ab6a6feaad3bb</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_0c389840833156103f8ab6a6feaad3bb</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:18:03</sys_created_on>
+        <sys_id>610950c0833156103f8ab6a6feaad320</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:18:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=610950c0833156103f8ab6a6feaad320"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Change Status Of Expense After Finance is created">0c389840833156103f8ab6a6feaad3bb</model>
+        <model_id>0c389840833156103f8ab6a6feaad3bb</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_0c389840833156103f8ab6a6feaad3bb</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:18:02</sys_created_on>
+        <sys_id>690910c0833156103f8ab6a6feaad3ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:18:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=690910c0833156103f8ab6a6feaad3ff"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=0c389840833156103f8ab6a6feaad3bb"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0c389840833156103f8ab6a6feaad3bb"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=0c389840833156103f8ab6a6feaad3bb^sys_idNOT IN17cb5c84833156103f8ab6a6feaad3f3"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">0c389840833156103f8ab6a6feaad3bb</flow>
+        <name>Created or Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:11</sys_created_on>
+        <sys_id>17cb5c84833156103f8ab6a6feaad3f3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:44</sys_updated_on>
+        <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create_or_update</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=0c389840833156103f8ab6a6feaad3bb^sys_idNOT IN5bcb5c84833156103f8ab6a6feaad3f6,9fcb5c84833156103f8ab6a6feaad3f4,dbcb5c84833156103f8ab6a6feaad3f8"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">0c389840833156103f8ab6a6feaad3bb</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>49cfb8b6-67cd-4a88-b5cb-886e5f94d9cf</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:11</sys_created_on>
+        <sys_id>5bcb5c84833156103f8ab6a6feaad3f6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:11</sys_updated_on>
+        <ui_id>c66d08c6-2b5a-4ac8-a3f4-2bfaca9a6b08</ui_id>
+        <values>H4sIAAAAAAAA/+1UyW7bMBD9lUBnWaAkW5J9K2AY6KEJ4Ba5pIFAiSObALWUi2PX8L93qMVxliaukR4KVCdxODPvvZkH3u0dzpyZMwZG/Kkf5aEfhgEhQTL2syjM/ICFFMB3XKeiJWCmhLyWDM8bKowN7PdxOE6yAugoCuN4NE4IGdFpnowikgRhGE9IwQpv2dYdDljJuGoE3d32DTCSr7lgEipndnfvOg2ViKVBOrP9syu9ayAVNAOBhfM6NyVU+urzHHucq2OoXg5CnguzGHhmffeU2yBeWT4+cR3YaqgYIFxBhQLXKWnFqK7lzplpaTAggbKbSuyOGWte6U5pSbeK/8T+Y2LzCkBp+XEKNc/hptG8rrqIppkYLmthyuq642qHCAU1Qp8M0ShIGTSWm0XrqBRf1/XDcsBZ8KqV0dMSdU7F8US1ljwzGpSdOwho1Ze0aXi1ShtZb3hbjFRKbyXw4BWifkBMxVeVR3PL28NJUG+B8XkbvqWSWxFfsA0WH1rR6Q9jcTsZPeG01dwKTtuNYKrKJW/0J2y8gZ7mwe0dm03e2nQ+fVzsSc9H127TJI5iEqSwRQI4ufL4p0xWcqVQTNrN/4Vj/6z4MnN/s9VX1x3rcxU/Kf7NBHp7P4n17p58mLuTv+3uHvofs/d7pibBm8/XyUpbH6sTQytNtVHfDSEhs5hWlAReZkYq/dLC76VfaFooEUTDVQfjnq1qaLDgIJh6Rebg2h4g3fQAx3f5w6zrR6T9/j/PlzzP978A+Nwv9VIIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">0c389840833156103f8ab6a6feaad3bb</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:11</sys_created_on>
+        <sys_id>9fcb5c84833156103f8ab6a6feaad3f4</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:44</sys_updated_on>
+        <ui_id>7348bfea-6377-4800-a9c8-608233750fdf</ui_id>
+        <values>H4sIAAAAAAAA/9VYW2/iOhD+K1GeKZsQINC3o1ZIK52zlXa7+9KtLCd2inWMnbWd3hD/fcdJHCjXlFKpfSP2XL6Z+WYy4WbuM+Kf+2QcjLPxeDCKgyCKgmA4jFIcJkk0TJMgwX2/4ws8oyBpcMIpPN5jXtjnRzSKh3HQQ/Qxp0JTNGt+6SKZMa2ZFMhpEaZzjp9+HaWcThknigr//Oa24+dYASJDlX8+X7syTzlFHCeUg49rq+19s+g7rYN9obwZvHXgHpGoTEtFLJag49NHQwWh4CrDXNOOP8OCYCPVU3OiKCZXgi8PpkwYsOhb4UfNnsH8KLByGYWwUlrdpVPJUnqVG0hLdVIhqi4lL2biW4XU5ppmuODG5RpOCsgrobkFZ73VrrMfU/nw3TmaMFHGUV9ymWLePGFjFEsKQ7VNOuV0BobQDOc5E3coV/KelcqAZda94/DQzbh8AKea3YkuTi3wLuQCdydwflke/8KK2Sj+AzOgDIAYh7JWZUdaFqoM/x6lvNDlhcJCV7b8RZkj9KewKKuo6/hQlSIQ0KliufkHFO5pHcqi44g/2MuF8bL2qRSEWZ96hf2OrYz8LsAAmc8voLSGEk8q72dO7E8UdtNCQXJNdym+WGx2w9uMHdcdF6tRtc3IVuVtaar75MVZ3SfhyfqkHwTv3SlGFR+vUQ5Rvwr4AP9DsrfaZFlYLZVBVeZWGmCTxUdTccIoJy8GdQtwTvnKsspLnnbhrZmYWR9rE7v3eSb2h+QhACKoSiwTnInyzQhAT0PQwV4OJOFawcs6L+lZnmGdbtIUe0Z6z8fPzbKujqgtQDrFH4DIu65QbgHuJqYzX3M0OhlHo94OjgJDbuYNzCY9WzLpNh1bIyf/bOXxujzQaEUhXNw2HL84zmf4Wp8963OtCaNXdeEqhaqbyx1MOvF6taOrOu/ZxlNQrf2hqivRAyN31Cy9OykizQPm/2+7r1utaZYyvDevauHetT1ZWdVYhmZQJ5bD/qhoClTQCCuKMlkIgurNcUkbW7eMKW1q4c1h8Z2aQglPQm95Zkq9UtprpE8xQlpE5xS/Zp4Lr8agPQjPK8PzmvBel4wdg6d/wjWt1eCZYMbLHMOqn69u2kpJtWP4HCjPnjq3nEwtQYUnBfX20bWN2FtH2AGsn+K78a3jJaU46ffwMI7CMAjCgMTBKI7D0TDJhjjuZ8uOQkiLFOYfWM6AGGAeOSK4qgabM6Qagkf/iwHD9cukNtEWr1O+lMJ+UfZi41nAUGfPAT4cUj0YEik5xWJJz8H7T4aP8kdHwa7Xk1Ad/butOu/1ei7YT8H+FPSrrf6IBr1RSNKzURzGZ/2MDM/GBA/O8DgZxBGhaT87/o17+xcY4KjJFxQAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">0c389840833156103f8ab6a6feaad3bb</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>86bc372f-b907-4d99-903b-bf21b0cf6e4e</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:11</sys_created_on>
+        <sys_id>dbcb5c84833156103f8ab6a6feaad3f8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:11</sys_updated_on>
+        <ui_id>cce9d41e-e412-45de-9720-ca6602a4839d</ui_id>
+        <values>H4sIAAAAAAAA/+1UyW7bMBD9lUBnWaAkW5J9K2AY6KEJ4Ba5pIFAiSObALWUi2PX8L93qMVx1rpGeihQncQh5y3DB97tHc6cmTMGRvypH+WhH4YBIUEy9rMozPyAhRTAd1ynoiXgSQl5LRmuN1QYW9jv43CcZAXQURTG8WicEDKi0zwZRSQJwjCekIIV3rLtOxywk3HVCLq77QGwkq+5YBIqZ3Z37zoNlcilQTqz/bMtvWsgFTQDgY3zOjclVPrq8xwxzvUxdC8HI8+NWQ5csx495baIW1aPT1wHthoqBkhXUKHAdUpaMapruXNmWhosSKDsphK744k1r3TntKRbxX8i/pjYcwWgtfw4hZrncNNoXlddRdNMDJu1MGV13Wm1Q4SCGqFPhmgUpAwaq82ydVKKr+v6YTnwLHjV2uhliTqn4riiWkueGQ3Kzh0EtO5L2jS8WqWNrDe8bUYppbcSuPAKUT8gp+KryqO51e3hJKi3wPq8Ld9Sya2JLwiDzYfWdPrDWN7ORi84bT23htP2RvCoyiVv9CcE3kAv8+D2ic0m7910Pn282BPMx9Ru0ySOYhKksEUBOLny+KdMVnKl0Ezazf9FYv+s+bJwf7PdV9ed6nMdP2l+YwJ9vJ/U+nRPPizdyd9Od0/9j8X7d6EmwbvP18mVtjlWJ4FWmmqjvhtCQkwULzMjFbCX2X3z3IUxhRLRNVx1+O7ZPgaABQfB1CvGhpz2BOmmJzi+xB8WVj8i7ff/Qb7kQb7/BWeHpI1ECAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=0c389840833156103f8ab6a6feaad3bb"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=0c389840833156103f8ab6a6feaad3bb^sys_idNOT IN1bcb5c84833156103f8ab6a6feaad3f7,53cb5c84833156103f8ab6a6feaad3f6,57cb5c84833156103f8ab6a6feaad3f8,9bcb5c84833156103f8ab6a6feaad3f9"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">13cb5c84833156103f8ab6a6feaad3f7</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">0c389840833156103f8ab6a6feaad3bb</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>49cfb8b6-67cd-4a88-b5cb-886e5f94d9cf</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:11</sys_created_on>
+        <sys_id>1bcb5c84833156103f8ab6a6feaad3f7</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:44</sys_updated_on>
+        <ui_id>b3a8ab24-7e41-4a51-8ff3-448e6bf4ade9</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">57cb5c84833156103f8ab6a6feaad3f5</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">0c389840833156103f8ab6a6feaad3bb</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:11</sys_created_on>
+        <sys_id>53cb5c84833156103f8ab6a6feaad3f6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:44</sys_updated_on>
+        <ui_id>49cfb8b6-67cd-4a88-b5cb-886e5f94d9cf</ui_id>
+        <values>H4sIAAAAAAAA/+VUTW/bMAz9K4HPhuGPJlhzKzoUGLCtwNr1shUGLdGJMFny9JE0C/LfR1l2W2zpWhS97WY9UuR75JP3ifau985e6zNrxUoly2+3aSJUwOh7nyjoMFkmTCsunNCqHoA02YD0IWAdOG9nws686o1maC1yinNhewm7m2fS2FpIbnDs24Oh6g5Nstz/EXK7HmsJDUqqduWMUCu6Ljid2hza4pQVrCoXVZnn5buTollUTVHyChAqypsunk8yZh8HJH1SX+g38B47acMDrSJPE7xzqDjRX7YgLaZJB4qD02Z3jxgEfqnkA7AWylG5JCTfWfGLapfzeUhskTQyjEG21oLhZR+YRMRBI6eglr5TnyPhMGJswUs3jZgQb7Hm2Ad2od3Yu71a6+2XqdGFUIOSMSg1A3l/Akd6G+/Qhg2gxI4K1R30PU2hpsVtxHCZuHTZStIha6XeUtNgngxYIJ7RMCC7IPz9AN+AEUHFJypDlyPNBqxg9WA0KucMSTgM46h/+kAoChyl1HEalGCZEb07oz4bHFkf0r9d+sig+/05bcMhn2kz+9rz8FkXGfOGxuEyg6JrvLFRabTp4fDd53nF/+noN6v7Fk/gFObtvMjnx5/AyeLYEzhi/qd9Xz7j+7DAF9o+z/P/1PfC1tG/o7ah+attfxs8HjvYaBCOTFgich2wD9M/PAR2tGnBHkNbbX4ECQ/Y4TdO/oRHDQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">5fcb5c84833156103f8ab6a6feaad3f7</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">0c389840833156103f8ab6a6feaad3bb</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:11</sys_created_on>
+        <sys_id>57cb5c84833156103f8ab6a6feaad3f8</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:44</sys_updated_on>
+        <ui_id>86bc372f-b907-4d99-903b-bf21b0cf6e4e</ui_id>
+        <values>H4sIAAAAAAAA/+VUy27bMBD8FUNnQdAjNhrfghQBCrQN0KS5tIGwIlc2UYpU+bDjGv73LkUpCVonDYLcehNnlzszy4H2ifau985e6zNrxUoly2+3aSJUwOh7nyjoMFkmTCsunNCqHoA02YD0oWAdOG9nws56oxlai5yqXNhewu7m2Sa2FpIbHDl7MDTZoUmW+z9KbtdjLaFBSbOunBFqRdcFp1ObQ1ucsoJV5aIq87x8d1I0i6opSl4BQkV908XzycLs44CkT3oLfIPqkUkbHmQVeZrgnUPFSf6yBWkxTTpQHJw2u3vEIPBLJR+AtVCOxiWh+c6KXzS7nM9DY4vkkWEssrUWDC/7oCQiDho5FbX0nfocBYcFYwteumnBhHiLNcc+qAt0I3d7tdbbLxPRhVCDk7EoNQN5fwJHfhvv0IYXQIkdDao76HvaQk0PtxHDZdLSZStJh6yVekukITgZsCA8o2VAdkH4+wG+ASOCi080hi5HmQ1YweohZDTOGbJwGNZR//RBUDQ4WqnjNqjBMiN6d0Y8GxxVH9K/E/oonPv9Ob2GQz7TZva15+GzLjLmDa3DZQZF13hjo9MY0sPhu8/zij+T5jea+hbxP4V5Oy/y+fH4nyyOxf9I8J/OfPmPzIfHe2Hk8zz/TzMvbB2zO3obyF8d+duQ78hgY0A4MmFJyHXAPkz/7lDY0UsL9hjaavMjWHjADr8B2erMHgUGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">93cb5c84833156103f8ab6a6feaad3f9</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">0c389840833156103f8ab6a6feaad3bb</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>86bc372f-b907-4d99-903b-bf21b0cf6e4e</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:11</sys_created_on>
+        <sys_id>9bcb5c84833156103f8ab6a6feaad3f9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:44</sys_updated_on>
+        <ui_id>144bf224-8956-49db-933e-ae134c67e835</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=0c389840833156103f8ab6a6feaad3bb"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=0c389840833156103f8ab6a6feaad3bb"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_0c389840833156103f8ab6a6feaad3bb^sys_idNOT IN610950c0833156103f8ab6a6feaad31f,650950c0833156103f8ab6a6feaad322,97cb5c84833156103f8ab6a6feaad3ef"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0c389840833156103f8ab6a6feaad3bb</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:18:03</sys_created_on>
+        <sys_id>610950c0833156103f8ab6a6feaad31f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Record</sys_name>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_0c389840833156103f8ab6a6feaad3bb_current_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:18:03</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0c389840833156103f8ab6a6feaad3bb</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:18:03</sys_created_on>
+        <sys_id>650950c0833156103f8ab6a6feaad322</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Table Name</sys_name>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_0c389840833156103f8ab6a6feaad3bb_table_name_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:18:03</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0c389840833156103f8ab6a6feaad3bb</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:11</sys_created_on>
+        <sys_id>97cb5c84833156103f8ab6a6feaad3ef</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Changed Fields</sys_name>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_0c389840833156103f8ab6a6feaad3bb_changed_fields_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:11</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_0c389840833156103f8ab6a6feaad3bb"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_0c389840833156103f8ab6a6feaad3bb"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_0c389840833156103f8ab6a6feaad3bb"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Change the status of expense record to 'Pending Reimbursement' after the Finance Record has been created</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>change_status_of_expense_after_finance_is_reated</internal_name>
+        <label_cache>[{"name":"7348bfea-6377-4800-a9c8-608233750fdf.Record","label":"1 - Look Up Record➛Expense Submission Table Record","reference":"x_876702_expense_m_expense_submission_table","reference_display":"Expense Submission Table","type":"reference","base_type":"reference","usedInstances":{"c66d08c6-2b5a-4ac8-a3f4-2bfaca9a6b08":["record"],"cce9d41e-e412-45de-9720-ca6602a4839d":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created or Updated_1.current.reimbursement_status","label":"Trigger - Record Created or Updated➛Finance Table Record➛Reimbursement Status","reference":"","reference_display":"Reimbursement Status","type":"choice","base_type":"choice","parent_table_name":"x_876702_expense_m_finance_table","column_name":"reimbursement_status","choices":[{"label":"-- None --","used":false,"image":"","reference":false,"selected":false,"missing":false,"rawLabel":"-- None --","value":""},{"label":"Unprocessed","used":false,"image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Unprocessed","value":"unprocessed","parameters":{"name":"x_876702_expense_m_finance_table","dependent_values":[""]}},{"label":"Processed","used":false,"image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Processed","value":"processed","parameters":{"name":"x_876702_expense_m_finance_table","dependent_values":[""]}}],"usedInstances":{"49cfb8b6-67cd-4a88-b5cb-886e5f94d9cf":["condition"],"86bc372f-b907-4d99-903b-bf21b0cf6e4e":["condition"]}},{"name":"Created or Updated_1.current.expense_id","label":"Trigger - Record Created or Updated➛Finance Table Record➛Expense ID","reference":"x_876702_expense_m_expense_submission_table","reference_display":"Expense Submission Table","type":"reference","base_type":"reference","parent_table_name":"x_876702_expense_m_finance_table","column_name":"expense_id","usedInstances":{"7348bfea-6377-4800-a9c8-608233750fdf":["conditions"]}},{"name":"Created_1.current.expense_id","label":"Trigger - Record Created➛Finance Table Record➛Expense ID","reference":"x_876702_expense_m_expense_submission_table","reference_display":"Expense Submission Table","type":"reference","base_type":"reference","parent_table_name":"x_876702_expense_m_finance_table","column_name":"expense_id","usedInstances":{"3b3e149d-5a90-4d95-a163-6ab252f0bb5c":["conditions"],"d19adcdb-fbf5-4043-ada7-631d06f91374":["condition"]}}]</label_cache>
+        <master>true</master>
+        <name>Change Status Of Expense After Finance is created</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Change Status Of Expense After Finance is created">0c389840833156103f8ab6a6feaad3bb</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:18:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4f2914c0833156103f8ab6a6feaad37a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=4f2914c0833156103f8ab6a6feaad37a"/>
+    <sys_variable_value action="delete_multiple" query="document_key=4f2914c0833156103f8ab6a6feaad37a"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=4f2914c0833156103f8ab6a6feaad37a"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=4f2914c0833156103f8ab6a6feaad37a^sys_idNOT IN032914c0833156103f8ab6a6feaad37c"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>4f2914c0833156103f8ab6a6feaad37a</id>
+        <name>Change Status Of Expense After Finance is reated</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:18:42</sys_created_on>
+        <sys_id>032914c0833156103f8ab6a6feaad37c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:18:42</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=032914c0833156103f8ab6a6feaad37c"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=4f2914c0833156103f8ab6a6feaad37a^sys_idNOT IN2beb50c4833156103f8ab6a6feaad3f7,832914c0833156103f8ab6a6feaad37d,872914c0833156103f8ab6a6feaad3a2"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDCollection</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>global</scope_name>
+        <serialized_content>{"FlowDesigner:FDCollection":{"$COCollectionField":[{"FDChangeDetails":{"previous_display_value":"String","previous_display_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Previous Display Value\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\"}"},"previous_value":"String","previous_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Previous Value\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\"}"},"current_display_value":"String","current_display_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Current Display Value\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"current_value":"String","current_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Current Value\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\"}"},"field_name":"String","field_name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Field Name\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\"}"}}}],"$COCollectionField.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"Changed Fields\",\"mandatory\":\"false\",\"child_name\":\"FDChangeDetails\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"100\",\"max_length\":\"4000\"}"},"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FDCollection.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"Changed Fields\",\"mandatory\":\"false\",\"child_name\":\"FDChangeDetails\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"100\",\"max_length\":\"4000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-06-13 23:19:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>f4f014150f023300ecf0cc52ff767eed</sys_id>
+        <sys_mod_count>101</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Flow Designer Designer Model" source="com.glide.hub.designer_backend.model">178d9a8f65d012104f340572a9474038</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Global">global</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-09-28 05:06:11</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Change Status Of Expense After Finance is created">4f2914c0833156103f8ab6a6feaad37a</model>
+        <model_id>4f2914c0833156103f8ab6a6feaad37a</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_4f2914c0833156103f8ab6a6feaad37a</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:45</sys_created_on>
+        <sys_id>2beb50c4833156103f8ab6a6feaad3f7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=2beb50c4833156103f8ab6a6feaad3f7"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Change Status Of Expense After Finance is created">4f2914c0833156103f8ab6a6feaad37a</model>
+        <model_id>4f2914c0833156103f8ab6a6feaad37a</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_4f2914c0833156103f8ab6a6feaad37a</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:18:42</sys_created_on>
+        <sys_id>832914c0833156103f8ab6a6feaad37d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=832914c0833156103f8ab6a6feaad37d"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Change Status Of Expense After Finance is created">4f2914c0833156103f8ab6a6feaad37a</model>
+        <model_id>4f2914c0833156103f8ab6a6feaad37a</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_4f2914c0833156103f8ab6a6feaad37a</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:18:42</sys_created_on>
+        <sys_id>872914c0833156103f8ab6a6feaad3a2</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=872914c0833156103f8ab6a6feaad3a2"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=4f2914c0833156103f8ab6a6feaad37a"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4f2914c0833156103f8ab6a6feaad37a"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=4f2914c0833156103f8ab6a6feaad37a^sys_idNOT INc32914c0833156103f8ab6a6feaad3bc"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">4f2914c0833156103f8ab6a6feaad37a</flow>
+        <name>Created or Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:18:42</sys_created_on>
+        <sys_id>c32914c0833156103f8ab6a6feaad3bc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create_or_update</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=4f2914c0833156103f8ab6a6feaad37a^sys_idNOT IN67eb90c4833156103f8ab6a6feaad30a,6feb90c4833156103f8ab6a6feaad309,afeb90c4833156103f8ab6a6feaad308"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">4f2914c0833156103f8ab6a6feaad37a</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>86bc372f-b907-4d99-903b-bf21b0cf6e4e</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:45</sys_created_on>
+        <sys_id>67eb90c4833156103f8ab6a6feaad30a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <ui_id>cce9d41e-e412-45de-9720-ca6602a4839d</ui_id>
+        <values>H4sIAAAAAAAA/+VVy07bQBT9FTTrJBrHeZjsKqJIlShIgNhQZF17rmGk8aPzCEmj/Huv7YkTBUpBYhM1q8x9nnM8x37YMCnYjI1Q8OA8mKRhEIZDzofRKEgmYRIMRQiIAeuxAnKkSo1pqQWdl6BcHdhspuEoSjKE/iScTvujiPM+nKdRf8KjYRhOxzwT2eCm6dtuqVNIUylY3/sBFEmfpRIaCzZ7eOyxCjTtsqjZbHOU+ihYBQkqKr3ZoT1Gb9dVfRZl6nIsbCx3wUvfOfeZs+9zylBTDSfgPYYri4VAApKBMthjORQCbKnXbGa1o4BGENeFWncVz7KwLdEcVkb+ps0jXtdlSMxSL0J3vINE4bwVqU1lc7BwS9NT63SnWSlTNK0uAjNwyl4cxtqC68rKsmhbbD3Yd5fK5cVVqwrrBhw8E2cwFljVXGv0LbXs9rl8udkBXciikcXTVGUKqjuBtVomztZwNgwVNjrnUFWyeIorXS5l00xQ8sGTosMgU+UL7TTyqRhAWuMekLIwWFB83oTvQcuaxA8aQ83bHjNrc6HAmD0V0jH+5WokLTFPIW5UaCSIm9tQN6daVvYbrVqiB77teUsk4/duWXq+v1QHM/e2WMXRdDLlwxhXBIC0zLt/xiW5NIboxe0TeWWJzzV/zj0f4LVzz51f8BZPb6BXscvD3rOrNuHtM/4y+0SnZh9P5eT98y/X8OG77+aD29QYxRw4xliwzvx0nId0ZWWeOG1QvDbHX+s+54MPIN35YCFRCfMG9J0JMCeAFuOWypERfPLs3ie7b8mXuSGY8OZ3Yp74bz4pj38AFQvutmcJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">4f2914c0833156103f8ab6a6feaad37a</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>49cfb8b6-67cd-4a88-b5cb-886e5f94d9cf</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:45</sys_created_on>
+        <sys_id>6feb90c4833156103f8ab6a6feaad309</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <ui_id>c66d08c6-2b5a-4ac8-a3f4-2bfaca9a6b08</ui_id>
+        <values>H4sIAAAAAAAA/+VVy07jMBT9FeR1WzlNaUN3IyqkkRiQALFhUHQT3xRLzmP8gHaq/vtcJ26oAPGQ2FTTVX2f55z4JHcbJgWbswkKHp1E0zyO4njM+TiZRNk0zqKxiAExYgNWQYlUqTGvtaDzIyjnA5vNLJ4kWYEwnMaz2XCScD6EkzwZTnkyjuPZMS9EMbpq+7Zb6hTSNArWt2EARfIHqYTGis3v7gesAU27LGo237xIfRasggwVlV7t0L5Eb9eNP4s6dyVWNpW74HnoXITM0c8FZajJw4n4gOHKYiWQgBSgDA5YCZUAW+s1m1vtKKARxGWl1n3Fg6xsR7SElZF/afOE+7oCiVkeROiPN5ApXHQidaliARauaXpune41q2WOptNFYAFO2dP9WFdw2VhZV12L9YNDd61cWV10qrB+wN4zcQZTgY3n6tF31Irrh/rpagf0TFatLIGmqnNQ/Qms1TJz1sPZMFTY6lxC08hqmTa6fpRtM0EpR0tFh1Gh6ifaaeSyGkHucY9IWRidUXzRhm9BS0/iF42h5u2AmbU5VWDMMxXSMf3jPJKOWKCQtiq0EqTtbfDNuZaN/UGrHjEA3w6CJbLj925ZfvJ8qfZmPttilSaz6YyPU1wRANKy7P8Zl5XSGKKXdk/klSW+1vw193yC1849N2HBWzyDgV7Fzvd7jy66RLDP8bfZJzk0+wQqB++fj1zDx+++m/duU2sUs+cYY8E689txHgu/09PUKMvMaWNfe+Sj8q+54hO4d644k6iEeYPIzhJYEk6LaUfshS1C8ug2JPsvy7d5I5ry9ndgDvlvPjD3/wB+A+UfdQkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">4f2914c0833156103f8ab6a6feaad37a</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:45</sys_created_on>
+        <sys_id>afeb90c4833156103f8ab6a6feaad308</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <ui_id>7348bfea-6377-4800-a9c8-608233750fdf</ui_id>
+        <values>H4sIAAAAAAAA/+VY247iOBD9lSjPNJtwC/TbqhHSSLPT0nTPvMyOLCd2GmuNnbGdviH+fctxDAjSQHZA6ta+YbvsOlV1TtnhxzJkJLwOySSa5JPJcJxEUb8fRaNRP8NxmvZHWRqleBB2QoEXFCwNTjmF4SPmpR0/o3EySqIeos8FFZqixfqXLtMF05pJgfwuwnTB8cv3/7Q5mzNOFBXh9Y+fnbDAChAZqsLr5c7SqSFxnFIOpve1g50QzUuxHqJqzc193t4WfHELUhELJeqE9NlQQShgyDHXtBMusCDYSPWynlEUk1vBNxNzJgycGFrjZ81ewe84snY5hagy6tbWw8rz1OXSLeVTbPCdUWVmSlWbZ3PJMqpdTgjNccnNzfacM7gtDGTZbXGhu92SlwvxxaUkXB/gSwczJZSJ0MIGa9HXoeR3c/n01SOdMVHlpV7kMsN8PcLGKJaWxuJZhpTTBRyEFrgomHhAhZKPrNoMWBbdBw6Dbs7lEzjV7EF0cWaBdyG3uDuD+Wk1/R0rZqP4C46BzQCIcWCJYxHSslRVOh9RxktdLSgstDsrXHVC/aJvONZ6EzmkHf0qLW6Xhzpi5JJmt2SKFeZPOOKR1sGtOl5Zw4M0nGxol0lBmEWht+Tl5cDI3yUcQJbLGyCPoSSQKvhWEPsTxd2sVJBu092Yr1b7cvu9w1rK73jcXn4324E3JaMW4t7c56YDaiHGZxPiIIo+mhTB+ftTYnttuRQcEVhMDhKNbDilpTLI5XJLYfsyac31EyB4rt9adgbpy1uoaqrnjHLSdOfM7MLOndP7/94575LoAIggV0EmOBPVIwKAXkoBw4P0S+MdrlUU2/C/msM629cBDowMXlur4QQ4Xg134Du4d3gaIPq+X1Fmt+f7yVoE/bOJoN87nwiW61DXyWzIu3872op6+1drj3ftgYZbG+JVk8ha+Yzb+uyt9kXcb6XibcK5lekbvDvzA/MNVXYu2QbmsLX2h5yG0RMjD9RsvHsrIs0T5v80rdfCRL5QVXgXeKzGB7+Z0q3HKsvRAirHCnhTK5oBOTTCiqJcloKg+jW9IZKtZM6UNrXxfrP5SkE/IpAgzsDMaVBZB2vrlhfy8Th8Kj/lgQ+k9qYDCCSoAgnWgbQLu03jGpzxoXqJxjXDjFcVgY+lYvvLRCmp3mheR4p5gBUndrYTQcVnBfX7ra9JBo0t8AjWD/Hlff72lFGcDnp4lPTjOIriiCTROEni8SjNRzgZ5BudIqRFBh0VTs6BKnA88tTwdY72e5Brq22bzQmoPAWnUtgv715iAgsL6ht4WMeB100llZJTLHa6yj3cFX/Mavw1X4fvsrN8iP+iSna/m2031ZjvS70fSvZNsF8l/WRpNqZRbxyT7GqcxMnVICejqwnBwys8SYdJn9BskJ/zSfDzXxYTPnsbFgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=4f2914c0833156103f8ab6a6feaad37a"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=4f2914c0833156103f8ab6a6feaad37a^sys_idNOT IN2feb90c4833156103f8ab6a6feaad30c,a7eb90c4833156103f8ab6a6feaad30b,abeb90c4833156103f8ab6a6feaad30e,ebeb90c4833156103f8ab6a6feaad30d"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">13cb5c84833156103f8ab6a6feaad3f7</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">4f2914c0833156103f8ab6a6feaad37a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>49cfb8b6-67cd-4a88-b5cb-886e5f94d9cf</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:45</sys_created_on>
+        <sys_id>2feb90c4833156103f8ab6a6feaad30c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <ui_id>b3a8ab24-7e41-4a51-8ff3-448e6bf4ade9</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">57cb5c84833156103f8ab6a6feaad3f5</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">4f2914c0833156103f8ab6a6feaad37a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:45</sys_created_on>
+        <sys_id>a7eb90c4833156103f8ab6a6feaad30b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <ui_id>49cfb8b6-67cd-4a88-b5cb-886e5f94d9cf</ui_id>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0HPxthxE9a8lYTCoFth7fqyFXMtyYmYLHn6SJqZ/PddWc4HW7aukMe9WedK955zpIM7or1rvbOP+sZasVRk9uU5IUIFDL87oqDhZEaoVkw4oVXZAwlZg/ShYB04b0fCjrxqjabcWs6wzoRtJWyfXtlGV0Iyw4e5LRjs7rghs+6XkmDYpc6gzq9pTovxtBhn2fjdVV5NiyofswI4FNhQQsUlbp3vCY/ueiT5oxK3bSNDI9RyWN8NXR72oDYssMqzhPAXxxVD9rMapOUJaUAxcNpsD4jhwO6VPAIroRy2I2HzixU/cOB4Mgkba44SKY/Fw/IRKskX0cJYqhfgAOl46rwZttOVFuhkNIjxGrx081Msbrhvg9x4xIXGw2ktfaM+RlfIocH+xhDxlpeMt0FtoD9oqR9WevNpz/RWqN6ZoSg1BXlYgUP/Ku8Cn45wyRtsVDbQtuhqie9gLfrDyKVJlxIXaS31BoeGt5gCDcRTNBfSW8QXPfwERgQVH7ANHo40K7CClv27xXZoEye7hNitnUuw9igSHS6/+0AxSh7EldGfcIQa0bobnLzmg45d8nsMThLQdXO8b8fZSJvR55aFzzJPqTdokEsNF03ljY3aYw52u68+ywr218hcrO/bMnYNk3qSZ5PzGbuansvYmXS9MVjjV4IVbvQfc5Vl2f9gXSRYwpYxDoO2fvgFc/UcQhRnHrymwiK1/pre7/9CobDFByboKbTR5lsQdcR2PwHSmMHKzwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">93cb5c84833156103f8ab6a6feaad3f9</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">4f2914c0833156103f8ab6a6feaad37a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>86bc372f-b907-4d99-903b-bf21b0cf6e4e</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:45</sys_created_on>
+        <sys_id>abeb90c4833156103f8ab6a6feaad30e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <ui_id>144bf224-8956-49db-933e-ae134c67e835</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">5fcb5c84833156103f8ab6a6feaad3f7</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Change Status Of Expense After Finance is created">4f2914c0833156103f8ab6a6feaad37a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:45</sys_created_on>
+        <sys_id>ebeb90c4833156103f8ab6a6feaad30d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <ui_id>86bc372f-b907-4d99-903b-bf21b0cf6e4e</ui_id>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0HPxthOE9a8lYTCoFth7fqyFXMtyYmYLHn6SJqZ/PddWc4HW9atkMe9WedK955zpIM7or1rvbOP+sZasVRk9uU5IUIFDL87oqDhZEaoVkw4oVXZAwlZg/ShYB04b0fCjlqjKbeWM6wyYVsJ26dXN9GVkMzwYWYLBjs7bsis+6UkGPaoM6jza5rTcTEdF1lWvLvKq+m4ygs2Bg5jbCih4hK3zvdkR3c9kvxRhdu2kZ8Rajms74YuD3tQGxZY5VlC+IvjiiH7WQ3S8oQ0oBg4bbYHxHBg90oegZVQDtuRsPnFih84sJhMwsaao0TKY/GwfIRK8kU0MJbqBThAOp46b4btdKUFOhkNYrwGL938FIsb7tsgNx5xofFwWkvfqI/RFXJosL8vRLzlJeNtUBvoD1rqh5XefNozvRWqd2YoSk1BHlbg0L/Ku8CnI1zyBhuVDbQtulriO1iL/jByadKlxEVaS73BoeEdpkAD8RTNhfQW8UUPP4ERQcUHbIOHI80KrKBl/2axHdrEyS4hdmvnEqw9ikSHy+8+UIySB3Fl9CccoUa07gYnr/mgY5f8HoGT1991c7xvx9lIm9HnloXPMk+pN2iQSw0XTeWNjdpjCna7rz7LxuyVuFyo69vydQ2TepJnk/P5upqey9eZZL0xVMVfQhVu8x8zlWXZ/1BdJFTCljEKg7Z++AUz9RwCFGcevKbCIrX+mt7v/z6hsMUHJugptNHmWxB1xHY/AaysTyXHBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=4f2914c0833156103f8ab6a6feaad37a"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=4f2914c0833156103f8ab6a6feaad37a"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_4f2914c0833156103f8ab6a6feaad37a^sys_idNOT IN0f2914c0833156103f8ab6a6feaad39f,a3eb50c4833156103f8ab6a6feaad3fc,cb2914c0833156103f8ab6a6feaad3a6"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4f2914c0833156103f8ab6a6feaad37a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:18:42</sys_created_on>
+        <sys_id>0f2914c0833156103f8ab6a6feaad39f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Record</sys_name>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:18:42</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4f2914c0833156103f8ab6a6feaad37a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:30:45</sys_created_on>
+        <sys_id>a3eb50c4833156103f8ab6a6feaad3fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Changed Fields</sys_name>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4f2914c0833156103f8ab6a6feaad37a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:18:42</sys_created_on>
+        <sys_id>cb2914c0833156103f8ab6a6feaad3a6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Table Name</sys_name>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:18:42</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_4f2914c0833156103f8ab6a6feaad37a"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_4f2914c0833156103f8ab6a6feaad37a"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_4f2914c0833156103f8ab6a6feaad37a"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>0c389840833156103f8ab6a6feaad3bb</sys_id>
+        <latest_snapshot>4f2914c0833156103f8ab6a6feaad37a</latest_snapshot>
+        <compiler_build/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=0c389840833156103f8ab6a6feaad3bb^sys_idNOT IN132914c0833156103f8ab6a6feaad3f1"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.Every</binding_strategy>
+        <plan/>
+        <plan_id>0c389840833156103f8ab6a6feaad3bb</plan_id>
+        <snapshot>4f2914c0833156103f8ab6a6feaad37a</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-06 02:18:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>132914c0833156103f8ab6a6feaad3f1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:30:46</sys_updated_on>
+        <trigger display_value="">3feb90c4833156103f8ab6a6feaad35a</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=0c389840833156103f8ab6a6feaad3bb"/>
+</record_update>

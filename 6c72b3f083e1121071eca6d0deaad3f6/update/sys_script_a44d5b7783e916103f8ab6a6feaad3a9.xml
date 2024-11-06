@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_876702_expense_m_finance_table</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_876702_expense_m_finance_table">work_notesVALCHANGES^EQ<item endquery="false" field="work_notes" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Sync WN from Finance to Expense</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	// Get the expense record
+	var expenseRecord = new GlideRecord('x_876702_expense_m_expense_submission_table');
+
+	// Query the expense record linked to the current record
+	expenseRecord.query('expense_id', current.expense_id);
+	expenseRecord.query();
+
+	// Get the laatest work note entry 
+	var financeWN = current.work_notes.getJournalEntry(1);
+
+	// Remove timestamps and username from worknotes to prevent duplicates
+	var regex = new RegExp('\n');
+	var index = financeWN.search(regex);
+	var cleanFinanceWN = (index > 0) ? financeWN.substring(index + 1).trim() : financeWN;
+
+	// Update the expense record if it exist
+	if(expenseRecord.next())
+	{
+		var expenseWN = expenseRecord.work_notes.getJournalEntry(1);
+		var indexExpense = expenseWN.search(regex);
+		var cleanExpenseWN = (indexExpense > 0) ? expenseWN.substring(indexExpense + 1).trim() : expenseWN;
+
+		if(cleanExpenseWN.indexOf(cleanFinanceWN) === -1)
+		{
+			expenseRecord.work_notes = expenseRecord.work_notes + '\n' + cleanFinanceWN;
+			expenseRecord.update();
+		}
+		else
+		{
+			gs.info('No matching expense record found');
+		}
+	}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-05 21:57:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a44d5b7783e916103f8ab6a6feaad3a9</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Sync WN from Finance to Expense</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Expense Management and Approval System" source="x_876702_expense_m">6c72b3f083e1121071eca6d0deaad3f6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Expense Management and Approval System">6c72b3f083e1121071eca6d0deaad3f6</sys_scope>
+        <sys_update_name>sys_script_a44d5b7783e916103f8ab6a6feaad3a9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-06 02:09:06</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=a44d5b7783e916103f8ab6a6feaad3a9"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>a44d5b7783e916103f8ab6a6feaad3a9</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-05 21:57:34</sys_created_on>
+        <sys_id>bd6d537b83e916103f8ab6a6feaad32b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-05 21:57:34</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

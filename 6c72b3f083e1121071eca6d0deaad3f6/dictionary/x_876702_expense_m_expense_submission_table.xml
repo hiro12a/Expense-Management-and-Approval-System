@@ -5,11 +5,11 @@
         <element attributes="edge_encryption_enabled=true" label="Attachments" max_length="1024" name="attachments" type="url"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Status" max_length="40" name="status" read_only="true" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Submitted" value="submitted"/>
-                <element inactive_on_update="false" label="Pending Approval" value="pending_approval"/>
-                <element inactive_on_update="false" label="Approved" value="approved"/>
-                <element inactive_on_update="false" label="Reimbursed" value="reimbursed"/>
-                <element inactive_on_update="false" label="Denied" value="denied"/>
+                <element inactive_on_update="false" label="Pending Approval" sequence="2" value="pending_approval"/>
+                <element inactive_on_update="false" label="Approved" sequence="0" value="approved"/>
+                <element inactive_on_update="false" label="Pending Reimbursement" sequence="3" value="pending_reimburst"/>
+                <element inactive_on_update="false" label="Reimbursed" sequence="4" value="reimbursed"/>
+                <element inactive_on_update="false" label="Denied" sequence="1" value="denied"/>
             </choice>
         </element>
         <element label="Additional Comments" max_length="255" name="additional_comments" type="journal_input"/>
